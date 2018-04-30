@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sunset_HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TSH_Caracteristica_habitacion">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Caracteristica_habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TN_Id_Habitacion_TSH_Caracteristica_habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TC_Descripcion_TSH_Caracteristica_habitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TSH_Habitacion" Relationship="Self.FKTSH_Habitacion_REL_TSH_Caracteristica_habitacion" FromRole="TSH_Caracteristica_habitacion" ToRole="TSH_Habitacion" />
+  </EntityType>
+  <EntityType Name="TSH_Cliente">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Nombre_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_Apellidos_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_Tarjeta_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Cliente" ToRole="TSH_Reserva" />
+  </EntityType>
+  <EntityType Name="TSH_Habitacion">
+    <Key>
+      <PropertyRef Name="TN_Numero_Habitacion_TSH_Habitacion" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TN_Numero_Habitacion_TSH_Habitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_Id_TipoH_TSH_Habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TN_Estado_TSH_habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TN_Borrado_TSH_Habitacion" Type="Int32" Nullable="false" />
+    <Property Name="TC_Descripcion_TSH_Habitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TI_Imagen_TSH_Habitacion" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TN_Id_Imagen_TSH_Habitacion" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="TSH_Caracteristica_habitacion" Relationship="Self.FKTSH_Habitacion_REL_TSH_Caracteristica_habitacion" FromRole="TSH_Habitacion" ToRole="TSH_Caracteristica_habitacion" />
+    <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Habitacion_REL_TSH_Reserva" FromRole="TSH_Habitacion" ToRole="TSH_Reserva" />
+    <NavigationProperty Name="TSH_Tipo_Habitacion" Relationship="Self.FKTSH_TipoHabitacion_REL_TSH_Habitacion" FromRole="TSH_Habitacion" ToRole="TSH_Tipo_Habitacion" />
+  </EntityType>
+  <EntityType Name="TSH_Pag_Facilidades">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Pag_Facilidades" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="Guid" Nullable="false" />
+    <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
+  </EntityType>
+  <EntityType Name="TSH_Pag_Home">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Pag_Home" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Pag_Home" Type="Int32" Nullable="false" />
+    <Property Name="TN_Id_Imagen_TSH_Pag_Home" Type="Guid" Nullable="false" />
+    <Property Name="TI_Imagen_TSH_Pag_Home" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Home" FromRole="TSH_Pag_Home" ToRole="TSH_Pagina" />
+  </EntityType>
+  <EntityType Name="TSH_Pagina">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Pagina" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Pagina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TC_Descripcion_TSH_Tipo_Habitacion" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TSH_Pag_Facilidades" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pagina" ToRole="TSH_Pag_Facilidades" />
+    <NavigationProperty Name="TSH_Pag_Home" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Home" FromRole="TSH_Pagina" ToRole="TSH_Pag_Home" />
+    <NavigationProperty Name="TSH_SobreN_Galeria" Relationship="Self.FKTSH_Pagina_REL_TSH_SobreN_Galeria" FromRole="TSH_Pagina" ToRole="TSH_SobreN_Galeria" />
+  </EntityType>
+  <EntityType Name="TSH_Publicidad">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Publicidad" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Publicidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_Id_Imagen_TSH_Publicidad" Type="Guid" Nullable="false" />
+    <Property Name="TI_Imagen_TSH_Publicidad" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TC_Direccion_Pagina_TSH_Publicidad" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TSH_Reserva">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Reserva" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_Numero_Reserva_TSH_Reserva" Type="Guid" Nullable="false" />
+    <Property Name="TN_Num_Habitacion_TSH_Reserva" Type="Int32" Nullable="false" />
+    <Property Name="TN_Id_Cliente_TSH_Reserva" Type="Int32" Nullable="false" />
+    <Property Name="TD_Fecha_Ingreso_TSH_Reserva" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TD_Fecha_Salida_TSH_Reserva" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TN_Borrado_TSH_Habitacion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TSH_Cliente" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Reserva" ToRole="TSH_Cliente" />
+    <NavigationProperty Name="TSH_Habitacion" Relationship="Self.FKTSH_Habitacion_REL_TSH_Reserva" FromRole="TSH_Reserva" ToRole="TSH_Habitacion" />
+  </EntityType>
+  <EntityType Name="TSH_SobreN_Galeria">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_SobreN_Galeria" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_SobreN_Galeria" Type="Int32" Nullable="false" />
+    <Property Name="TN_Id_Imagen_TSH_SobreN_Galeria" Type="Guid" Nullable="false" />
+    <Property Name="TI_Imagen_TSH_SobreN_Galeria" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_SobreN_Galeria" FromRole="TSH_SobreN_Galeria" ToRole="TSH_Pagina" />
+  </EntityType>
+  <EntityType Name="TSH_Tipo_Habitacion">
+    <Key>
+      <PropertyRef Name="TN_Identificador_TSH_Tipo_Habitacion" />
+    </Key>
+    <Property Name="TN_Identificador_TSH_Tipo_Habitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TN_Tarifa_TSH_Tipo_Habitacion" Type="Double" Nullable="false" />
+    <Property Name="TC_Descripcion_TSH_Tipo_Habitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TN_Cantidad_Personas_TSH_Tipo_Habitacion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TSH_Habitacion" Relationship="Self.FKTSH_TipoHabitacion_REL_TSH_Habitacion" FromRole="TSH_Tipo_Habitacion" ToRole="TSH_Habitacion" />
+  </EntityType>
+  <Association Name="FKTSH_Habitacion_REL_TSH_Caracteristica_habitacion">
+    <End Role="TSH_Habitacion" Type="Self.TSH_Habitacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Caracteristica_habitacion" Type="Self.TSH_Caracteristica_habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Habitacion">
+        <PropertyRef Name="TN_Numero_Habitacion_TSH_Habitacion" />
+      </Principal>
+      <Dependent Role="TSH_Caracteristica_habitacion">
+        <PropertyRef Name="TN_Id_Habitacion_TSH_Caracteristica_habitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_Cliente_REL_TSH_Reserva">
+    <End Role="TSH_Cliente" Type="Self.TSH_Cliente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Reserva" Type="Self.TSH_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Cliente">
+        <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+      </Principal>
+      <Dependent Role="TSH_Reserva">
+        <PropertyRef Name="TN_Id_Cliente_TSH_Reserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_Habitacion_REL_TSH_Reserva">
+    <End Role="TSH_Habitacion" Type="Self.TSH_Habitacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Reserva" Type="Self.TSH_Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Habitacion">
+        <PropertyRef Name="TN_Numero_Habitacion_TSH_Habitacion" />
+      </Principal>
+      <Dependent Role="TSH_Reserva">
+        <PropertyRef Name="TN_Num_Habitacion_TSH_Reserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_TipoHabitacion_REL_TSH_Habitacion">
+    <End Role="TSH_Tipo_Habitacion" Type="Self.TSH_Tipo_Habitacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Habitacion" Type="Self.TSH_Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Tipo_Habitacion">
+        <PropertyRef Name="TN_Identificador_TSH_Tipo_Habitacion" />
+      </Principal>
+      <Dependent Role="TSH_Habitacion">
+        <PropertyRef Name="TN_Id_TipoH_TSH_Habitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_Pagina_REL_TSH_Pag_Facilidades">
+    <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Pagina">
+        <PropertyRef Name="TN_Identificador_TSH_Pagina" />
+      </Principal>
+      <Dependent Role="TSH_Pag_Facilidades">
+        <PropertyRef Name="TN_Identificador_TSH_Pag_Facilidades" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_Pagina_REL_TSH_Pag_Home">
+    <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_Pag_Home" Type="Self.TSH_Pag_Home" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Pagina">
+        <PropertyRef Name="TN_Identificador_TSH_Pagina" />
+      </Principal>
+      <Dependent Role="TSH_Pag_Home">
+        <PropertyRef Name="TN_Identificador_TSH_Pag_Home" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTSH_Pagina_REL_TSH_SobreN_Galeria">
+    <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TSH_SobreN_Galeria" Type="Self.TSH_SobreN_Galeria" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TSH_Pagina">
+        <PropertyRef Name="TN_Identificador_TSH_Pagina" />
+      </Principal>
+      <Dependent Role="TSH_SobreN_Galeria">
+        <PropertyRef Name="TN_Identificador_TSH_SobreN_Galeria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Sunset_HotelDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" />
+    <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
+    <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" />
+    <EntitySet Name="TSH_Pag_Facilidades" EntityType="Self.TSH_Pag_Facilidades" />
+    <EntitySet Name="TSH_Pag_Home" EntityType="Self.TSH_Pag_Home" />
+    <EntitySet Name="TSH_Pagina" EntityType="Self.TSH_Pagina" />
+    <EntitySet Name="TSH_Publicidad" EntityType="Self.TSH_Publicidad" />
+    <EntitySet Name="TSH_Reserva" EntityType="Self.TSH_Reserva" />
+    <EntitySet Name="TSH_SobreN_Galeria" EntityType="Self.TSH_SobreN_Galeria" />
+    <EntitySet Name="TSH_Tipo_Habitacion" EntityType="Self.TSH_Tipo_Habitacion" />
+    <AssociationSet Name="FKTSH_Habitacion_REL_TSH_Caracteristica_habitacion" Association="Self.FKTSH_Habitacion_REL_TSH_Caracteristica_habitacion">
+      <End Role="TSH_Habitacion" EntitySet="TSH_Habitacion" />
+      <End Role="TSH_Caracteristica_habitacion" EntitySet="TSH_Caracteristica_habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_Cliente_REL_TSH_Reserva" Association="Self.FKTSH_Cliente_REL_TSH_Reserva">
+      <End Role="TSH_Cliente" EntitySet="TSH_Cliente" />
+      <End Role="TSH_Reserva" EntitySet="TSH_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_Habitacion_REL_TSH_Reserva" Association="Self.FKTSH_Habitacion_REL_TSH_Reserva">
+      <End Role="TSH_Habitacion" EntitySet="TSH_Habitacion" />
+      <End Role="TSH_Reserva" EntitySet="TSH_Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_TipoHabitacion_REL_TSH_Habitacion" Association="Self.FKTSH_TipoHabitacion_REL_TSH_Habitacion">
+      <End Role="TSH_Tipo_Habitacion" EntitySet="TSH_Tipo_Habitacion" />
+      <End Role="TSH_Habitacion" EntitySet="TSH_Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_Pagina_REL_TSH_Pag_Facilidades" Association="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades">
+      <End Role="TSH_Pagina" EntitySet="TSH_Pagina" />
+      <End Role="TSH_Pag_Facilidades" EntitySet="TSH_Pag_Facilidades" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_Pagina_REL_TSH_Pag_Home" Association="Self.FKTSH_Pagina_REL_TSH_Pag_Home">
+      <End Role="TSH_Pagina" EntitySet="TSH_Pagina" />
+      <End Role="TSH_Pag_Home" EntitySet="TSH_Pag_Home" />
+    </AssociationSet>
+    <AssociationSet Name="FKTSH_Pagina_REL_TSH_SobreN_Galeria" Association="Self.FKTSH_Pagina_REL_TSH_SobreN_Galeria">
+      <End Role="TSH_Pagina" EntitySet="TSH_Pagina" />
+      <End Role="TSH_SobreN_Galeria" EntitySet="TSH_SobreN_Galeria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

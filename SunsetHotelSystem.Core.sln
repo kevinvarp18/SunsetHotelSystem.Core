@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Core.Servicios.WebAPI", "SunsetHotelSystem.Core\SunsetHotelSystem.Core.Servicios.WebAPI.csproj", "{C49410AC-8CF6-41DB-B9A9-8F8496A1E947}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructura", "Infraestructura", "{E8BC660B-31F5-47C9-8A8D-3EC34E6EA10A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicios", "Servicios", "{F2FD9175-7038-4993-BB15-09B1F0D030BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{7239838C-0AF2-4EA2-A1BE-304D1D84F379}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", "{7FE107CB-01AB-4E92-9DAF-61C4A39909CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Aplicacion", "SunsetHotelSystem.Aplicacion\SunsetHotelSystem.Aplicacion.csproj", "{D0B2D60E-E6A2-4480-9A38-D551728B5FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Dominio", "SunsetHotelSystem.Dominio\SunsetHotelSystem.Dominio.csproj", "{DEB7AD57-34D4-4098-8753-D899CAA2CA86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Dominio.Entidades", "SunsetHotelSystem.Dominio.Entidades\SunsetHotelSystem.Dominio.Entidades.csproj", "{6E4C6CBD-5882-42B0-909C-25644ED27433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Dominio.UTL", "SunsetHotelSystem.Dominio.UTL\SunsetHotelSystem.Dominio.UTL.csproj", "{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Infraestructura.Datos", "SunsetHotelSystem.Infraestructura.Datos\SunsetHotelSystem.Infraestructura.Datos.csproj", "{34180437-32BC-414B-8F85-8E0D6CD95972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunsetHotelSystem.Infraestructura.IoC", "SunsetHotelSystem.Infraestructura.IoC\SunsetHotelSystem.Infraestructura.IoC.csproj", "{8F78DE2A-6823-4A90-A0B0-103622D5ACB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C49410AC-8CF6-41DB-B9A9-8F8496A1E947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49410AC-8CF6-41DB-B9A9-8F8496A1E947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49410AC-8CF6-41DB-B9A9-8F8496A1E947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49410AC-8CF6-41DB-B9A9-8F8496A1E947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B2D60E-E6A2-4480-9A38-D551728B5FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B2D60E-E6A2-4480-9A38-D551728B5FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B2D60E-E6A2-4480-9A38-D551728B5FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B2D60E-E6A2-4480-9A38-D551728B5FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB7AD57-34D4-4098-8753-D899CAA2CA86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB7AD57-34D4-4098-8753-D899CAA2CA86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB7AD57-34D4-4098-8753-D899CAA2CA86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB7AD57-34D4-4098-8753-D899CAA2CA86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4C6CBD-5882-42B0-909C-25644ED27433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4C6CBD-5882-42B0-909C-25644ED27433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4C6CBD-5882-42B0-909C-25644ED27433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4C6CBD-5882-42B0-909C-25644ED27433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34180437-32BC-414B-8F85-8E0D6CD95972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34180437-32BC-414B-8F85-8E0D6CD95972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34180437-32BC-414B-8F85-8E0D6CD95972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34180437-32BC-414B-8F85-8E0D6CD95972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F78DE2A-6823-4A90-A0B0-103622D5ACB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F78DE2A-6823-4A90-A0B0-103622D5ACB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F78DE2A-6823-4A90-A0B0-103622D5ACB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F78DE2A-6823-4A90-A0B0-103622D5ACB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C49410AC-8CF6-41DB-B9A9-8F8496A1E947} = {F2FD9175-7038-4993-BB15-09B1F0D030BD}
+		{D0B2D60E-E6A2-4480-9A38-D551728B5FA4} = {7FE107CB-01AB-4E92-9DAF-61C4A39909CC}
+		{DEB7AD57-34D4-4098-8753-D899CAA2CA86} = {7239838C-0AF2-4EA2-A1BE-304D1D84F379}
+		{6E4C6CBD-5882-42B0-909C-25644ED27433} = {7239838C-0AF2-4EA2-A1BE-304D1D84F379}
+		{64992FCF-FDD8-4863-8DB7-ED56B2B9DFF9} = {7239838C-0AF2-4EA2-A1BE-304D1D84F379}
+		{34180437-32BC-414B-8F85-8E0D6CD95972} = {E8BC660B-31F5-47C9-8A8D-3EC34E6EA10A}
+		{8F78DE2A-6823-4A90-A0B0-103622D5ACB4} = {E8BC660B-31F5-47C9-8A8D-3EC34E6EA10A}
+	EndGlobalSection
+EndGlobal
