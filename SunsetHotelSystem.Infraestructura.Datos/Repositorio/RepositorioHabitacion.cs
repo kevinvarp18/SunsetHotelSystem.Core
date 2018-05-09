@@ -17,7 +17,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public List<SP_ConsultarDisponibilidad_Result> consultarHabitacionesDisponibles(int tipoHabitacion) {
+        public List<SP_ConsultarDisponibilidad_Result> obtenerHabitacionesDisponibles(int tipoHabitacion) {
             List<SP_ConsultarDisponibilidad_Result> listaHabitaciones = new List<SP_ConsultarDisponibilidad_Result>();
             try {
                 listaHabitaciones = SS_Contexto.SP_ConsultarDisponibilidad(tipoHabitacion).ToList();
@@ -27,7 +27,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             return listaHabitaciones;
         }//Fin del método obtenerTiposHabitacion.
 
-        public TSH_Habitacion obtenerHabitacion(int idHabitacion) {
+        public TSH_Habitacion obtenerPorID(int idHabitacion) {
             TSH_Habitacion habitacionTemp = new TSH_Habitacion();
             try {
                 habitacionTemp = (from listaHabitaciones in SS_Contexto.TSH_Habitacion where listaHabitaciones.TN_Identificador_TSH_Habitacion == idHabitacion select listaHabitaciones).Single<TSH_Habitacion>();

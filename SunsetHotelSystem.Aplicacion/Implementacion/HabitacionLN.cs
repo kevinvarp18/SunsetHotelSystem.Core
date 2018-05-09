@@ -18,30 +18,30 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             DominioHabitacion = repositorio;
         }//Fin del constructor.
 
-        public Respuesta<List<SP_ConsultarDisponibilidad_Result>> lfConsultarHabitacionesDisponibles(int tipoHabitacion) {
+        public Respuesta<List<SP_ConsultarDisponibilidad_Result>> lfObtenerHabitacionesDisponibles(int tipoHabitacion) {
             Respuesta<List<SP_ConsultarDisponibilidad_Result>> respuesta = new Respuesta<List<SP_ConsultarDisponibilidad_Result>>();
 
             try {
-                respuesta.valorRetorno = DominioHabitacion.consultarHabitacionesDisponibles(tipoHabitacion);
+                respuesta.valorRetorno = DominioHabitacion.obtenerHabitacionesDisponibles(tipoHabitacion);
             } catch (Exception ex)  {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
             }//Fin del try-catch.
             return respuesta;
-        }//Fin del método lfConsultarHabitacionesDisponibles.
+        }//Fin del método lfObtenerHabitacionesDisponibles.
 
-        public Respuesta<TSH_Habitacion> lfObtenerHabitacion(int idHabitacion) {
+        public Respuesta<TSH_Habitacion> lfObtenerPorID(int idHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
 
             try {
-                respuesta.valorRetorno = DominioHabitacion.obtenerHabitacion(idHabitacion);
+                respuesta.valorRetorno = DominioHabitacion.obtenerPorID(idHabitacion);
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
             }//Fin del try-catch.
             return respuesta;
-        }
+        }//Fin del método lfObtenerPorID.
     }//Fin de la clase HabitacionLN.
 }//Fin del namespace.

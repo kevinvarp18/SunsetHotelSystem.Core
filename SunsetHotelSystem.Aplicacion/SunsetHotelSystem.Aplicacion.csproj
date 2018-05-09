@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementacion\HabitacionLN.cs" />
+    <Compile Include="Implementacion\HomeLN.cs" />
     <Compile Include="Implementacion\ReservaLN.cs" />
     <Compile Include="Implementacion\TipoHabitacionLN.cs" />
     <Compile Include="Interfaces\IHabitacionLN.cs" />
+    <Compile Include="Interfaces\IHomeLN.cs" />
     <Compile Include="Interfaces\IReservaLN.cs" />
     <Compile Include="Interfaces\ITipoHabitacionLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

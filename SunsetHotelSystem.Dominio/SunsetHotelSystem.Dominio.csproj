@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IRepositorio\IRepositorioBase.cs" />
     <Compile Include="IRepositorio\IRepositorioHabitacion.cs" />
+    <Compile Include="IRepositorio\IRepositorioHome.cs" />
     <Compile Include="IRepositorio\IRepositorioReserva.cs" />
     <Compile Include="IRepositorio\IRepositorioTipoHabitacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

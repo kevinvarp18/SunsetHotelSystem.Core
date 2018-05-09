@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Dominio.IRepositorio {
-    public interface IRepositorioReserva {
-        TSH_Reserva insertar(TSH_Reserva reserva);
-    }//Fin de la interfaz IRepositorioReserva.
+    public interface IRepositorioHome {
+        TSH_Pag_Home obtenerPorID(int idPagina);
+    }//Fin de la interfaz IRepositorioHome.
 }//Fin del namespace.

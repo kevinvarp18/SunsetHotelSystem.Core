@@ -7,6 +7,6 @@ using SunsetHotelSystem.Dominio.Entidades.Entidades;
 
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioTipoHabitacion {
-        List<TSH_Tipo_Habitacion> obtenerTiposHabitacion();
-    }
-}
+        List<TSH_Tipo_Habitacion> obtener();
+    }//Fin de la interfaz IRepositorioTipoHabitacion.
+}//Fin del namespace.

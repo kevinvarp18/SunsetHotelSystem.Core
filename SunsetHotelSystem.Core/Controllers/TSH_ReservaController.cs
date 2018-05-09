@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 
 namespace SunsetHotelSystem.Core.Controllers {
     [RoutePrefix("api/TSH_Reserva")]
-    public class ReservaController : ApiController {
+    public class TSH_ReservaController : ApiController {
 
         [Route("")]
         [HttpPost]

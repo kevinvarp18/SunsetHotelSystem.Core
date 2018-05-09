@@ -17,7 +17,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public TSH_Reserva insertarReserva(TSH_Reserva reserva) {
+        public TSH_Reserva insertar(TSH_Reserva reserva) {
             DbContextTransaction dbTransaction = SS_Contexto.Database.BeginTransaction();
 
             try {

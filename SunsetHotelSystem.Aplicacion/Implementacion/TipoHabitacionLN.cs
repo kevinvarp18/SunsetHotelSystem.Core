@@ -22,7 +22,7 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             Respuesta<List<TSH_Tipo_Habitacion>> respuesta = new Respuesta<List<TSH_Tipo_Habitacion>>();
 
             try {
-                respuesta.valorRetorno = DominioTipoHabitacion.obtenerTiposHabitacion();
+                respuesta.valorRetorno = DominioTipoHabitacion.obtener();
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;

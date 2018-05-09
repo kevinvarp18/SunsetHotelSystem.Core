@@ -9,22 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Aplicacion.Implementacion {
-    public class ReservaLN : IReservaLN {
+    public class HomeLN : IHomeLN {
         #region
-        private readonly IRepositorioReserva DominioReserva;
+        private readonly IRepositorioHome DominioHome;
         #endregion
 
-        public Respuesta<TSH_Reserva> lfInsertar(TSH_Reserva reserva) {
-            Respuesta<TSH_Reserva> respuesta = new Respuesta<TSH_Reserva>();
+        public HomeLN(IRepositorioHome repositorio) {
+            DominioHome = repositorio;
+        }//Fin del constructor.
+
+        public Respuesta<TSH_Pag_Home> lfObtenerPorID(int idPagina) {
+            Respuesta<TSH_Pag_Home> respuesta = new Respuesta<TSH_Pag_Home>();
 
             try {
-                respuesta.valorRetorno = DominioReserva.insertar(reserva);
+                respuesta.valorRetorno = DominioHome.obtenerPorID(idPagina);
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
             }//Fin del try-catch.
             return respuesta;
-        }//Fin del método lfInsertar.
-    }//Fin de la clase ReservaLN.
+        }//Fin del método lfObtenerPorID.
+    }//Fin de la clase HomeLN.
 }//Fin del namespace.

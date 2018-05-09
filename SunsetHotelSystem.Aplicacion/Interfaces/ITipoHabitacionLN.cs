@@ -9,5 +9,5 @@ using SunsetHotelSystem.Dominio.UTL;
 namespace SunsetHotelSystem.Aplicacion.Interfaces {
     public interface ITipoHabitacionLN {
         Respuesta<List<TSH_Tipo_Habitacion>> lfObtener();
-    }//Fin de la interfaz.
+    }//Fin de la interfaz ITipoHabitacionLN.
 }//Fin del namespace.

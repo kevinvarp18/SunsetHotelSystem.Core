@@ -17,7 +17,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public List<TSH_Tipo_Habitacion> obtenerTiposHabitacion() {
+        public List<TSH_Tipo_Habitacion> obtener() {
             List<TSH_Tipo_Habitacion> listaTiposHabitacion = new List<TSH_Tipo_Habitacion>();
             try{
                 listaTiposHabitacion = (from list in SS_Contexto.TSH_Tipo_Habitacion select list).ToList<TSH_Tipo_Habitacion>();
