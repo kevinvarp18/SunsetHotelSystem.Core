@@ -21,7 +21,7 @@ namespace SunsetHotelSystem.Core.Controllers {
         public IHttpActionResult Reserva(int idHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
             var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
-            return Json(habitacionLN.lfObtenerHabitacion(idHabitacion), new JsonSerializerSettings() {
+            return Json(habitacionLN.lfObtenerPorID(idHabitacion), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });

@@ -32,7 +32,7 @@ namespace SunsetHotelSystem.Core.Controllers {
         public IHttpActionResult obtenerTipoHabitacion(int tipoHabitacion) {
             Respuesta<SP_ConsultarDisponibilidad_Result> respuesta = new Respuesta<SP_ConsultarDisponibilidad_Result>();
             var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
-            return Json(habitacionLN.lfConsultarHabitacionesDisponibles(tipoHabitacion), new JsonSerializerSettings() {
+            return Json(habitacionLN.lfObtenerHabitacionesDisponibles(tipoHabitacion), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });

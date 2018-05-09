@@ -19,8 +19,8 @@ namespace SunsetHotelSystem.Core.Controllers {
         [ResponseType(typeof(Respuesta<TSH_Pag_Home>))]
         public IHttpActionResult obtenerPaginaHome() {
             Respuesta<List<TSH_Pag_Home>> respuesta = new Respuesta<List<TSH_Pag_Home>>();
-            var homeLN = FabricaIoC.Container.Resolver<TSH_Pag_Home>();
-            return Json(homeLN.lfObtenerPaginaHome(5), new JsonSerializerSettings() {
+            var homeLN = FabricaIoC.Container.Resolver<HomeLN>();
+            return Json(homeLN.lfObtenerPorID(5), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });

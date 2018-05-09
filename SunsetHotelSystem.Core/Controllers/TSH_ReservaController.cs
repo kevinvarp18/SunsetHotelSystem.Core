@@ -20,7 +20,7 @@ namespace SunsetHotelSystem.Core.Controllers {
         [ResponseType(typeof(Respuesta<TSH_Reserva>))]
         public IHttpActionResult agregarReservacion([FromBody]TSH_Reserva reserva) {
             ReservaLN reservaLN = FabricaIoC.Container.Resolver<ReservaLN>();
-            return Json(reservaLN.lfInsertarReserva(reserva), new JsonSerializerSettings() {
+            return Json(reservaLN.lfInsertar(reserva), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
