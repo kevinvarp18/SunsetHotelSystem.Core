@@ -11,73 +11,30 @@ using System.Threading.Tasks;
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioHabitacion : IRepositorioHabitacion {
 
-        private readonly Sunset_HotelDBEntities SS_Contexto;
+        private readonly SunsetHotel_DBEntities SS_Contexto;
 
-        public RepositorioHabitacion(Sunset_HotelDBEntities contexto) {
+        public RepositorioHabitacion(SunsetHotel_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public TSH_Habitacion insertarHabitacion(TSH_Habitacion habitacion) {
-            DbContextTransaction transaccionBD = SS_Contexto.Database.BeginTransaction();
-
+        public List<SP_ConsultarDisponibilidad_Result> consultarHabitacionesDisponibles(int tipoHabitacion) {
+            List<SP_ConsultarDisponibilidad_Result> listaHabitaciones = new List<SP_ConsultarDisponibilidad_Result>();
             try {
-                SS_Contexto.TSH_Habitacion.Add(habitacion);
-                SS_Contexto.SaveChanges();
-                transaccionBD.Commit();
-            } catch (Exception ex) {
-                transaccionBD.Rollback();
-                throw new Exception(ex.ToString());
-            }
-            return habitacion;
-        }
-
-        public bool eliminarHabitacion(TSH_Habitacion habitacion) {
-            DbContextTransaction transaccionBD = SS_Contexto.Database.BeginTransaction();
-
-            try {
-                SS_Contexto.TSH_Habitacion.Attach(habitacion);
-                SS_Contexto.TSH_Habitacion.Remove(habitacion);
-                SS_Contexto.SaveChanges();
-                transaccionBD.Commit();
-            } catch (Exception ex) {
-                transaccionBD.Rollback();
-                throw new Exception(ex.ToString());
-            }
-            return true;
-        }
-        public List<TSH_Habitacion> obtenerHabitaciones() {
-            List<TSH_Habitacion> userList = new List<TSH_Habitacion>();
-            try {
-                userList = (from list in SS_Contexto.TSH_Habitacion select list).ToList<TSH_Habitacion>();
+                listaHabitaciones = SS_Contexto.SP_ConsultarDisponibilidad(tipoHabitacion).ToList();
             } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }
-            return userList;
-        }
+            return listaHabitaciones;
+        }//Fin del método obtenerTiposHabitacion.
 
-        public TSH_Habitacion obtenerHabitacionID(TSH_Habitacion habitacion) {
+        public TSH_Habitacion obtenerHabitacion(int idHabitacion) {
             TSH_Habitacion habitacionTemp = new TSH_Habitacion();
             try {
-                habitacionTemp = (from listaHabitaciones in SS_Contexto.TSH_Habitacion where listaHabitaciones.TN_Numero_Habitacion_TSH_Habitacion == habitacion.TN_Numero_Habitacion_TSH_Habitacion select listaHabitaciones).Single<TSH_Habitacion>();
+                habitacionTemp = (from listaHabitaciones in SS_Contexto.TSH_Habitacion where listaHabitaciones.TN_Identificador_TSH_Habitacion == idHabitacion select listaHabitaciones).Single<TSH_Habitacion>();
             } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }
             return habitacionTemp;
-        }
-
-        public TSH_Habitacion actualizarHabitacion(TSH_Habitacion habitacion) {
-            DbContextTransaction transaccionBD = SS_Contexto.Database.BeginTransaction();
-
-            try {
-                var entity = SS_Contexto.TSH_Habitacion.Find(habitacion.TN_Numero_Habitacion_TSH_Habitacion);
-                SS_Contexto.Entry(entity).CurrentValues.SetValues(habitacion);
-                SS_Contexto.SaveChanges();
-                transaccionBD.Commit();
-            } catch (Exception ex) {
-                transaccionBD.Rollback();
-                throw new Exception(ex.ToString());
-            }
-            return habitacion;
-        }
+        }//Fin del método lfObtenerHabitacion
     }//Fin de la clase RepositorioHabitacion.
 }//Fin del namespace.

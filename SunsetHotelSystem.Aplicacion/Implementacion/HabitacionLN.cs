@@ -18,68 +18,30 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             DominioHabitacion = repositorio;
         }//Fin del constructor.
 
-        public Respuesta<List<TSH_Habitacion>> lfObtener() {
-            Respuesta<List<TSH_Habitacion>> respuesta = new Respuesta<List<TSH_Habitacion>>();
+        public Respuesta<List<SP_ConsultarDisponibilidad_Result>> lfConsultarHabitacionesDisponibles(int tipoHabitacion) {
+            Respuesta<List<SP_ConsultarDisponibilidad_Result>> respuesta = new Respuesta<List<SP_ConsultarDisponibilidad_Result>>();
 
             try {
-                respuesta.valorRetorno = DominioHabitacion.obtenerHabitaciones();
-            } catch (Exception ex) {
+                respuesta.valorRetorno = DominioHabitacion.consultarHabitacionesDisponibles(tipoHabitacion);
+            } catch (Exception ex)  {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
             }//Fin del try-catch.
             return respuesta;
-        }//Fin del método lfObtener.
+        }//Fin del método lfConsultarHabitacionesDisponibles.
 
-        public Respuesta<TSH_Habitacion> lfObtener(int id) {
+        public Respuesta<TSH_Habitacion> lfObtenerHabitacion(int idHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
 
             try {
-                respuesta.valorRetorno = DominioHabitacion.obtenerHabitacionID(new TSH_Habitacion { TN_Numero_Habitacion_TSH_Habitacion = id });
+                respuesta.valorRetorno = DominioHabitacion.obtenerHabitacion(idHabitacion);
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
             }//Fin del try-catch.
             return respuesta;
-        }//Fin del método lfObtener.
-
-        public Respuesta<TSH_Habitacion> lfInsertar(TSH_Habitacion user) {
-            Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
-
-            try {
-                respuesta.valorRetorno = DominioHabitacion.insertarHabitacion(user);
-            } catch (Exception ex) {
-                respuesta.bnlIndicadorTransaccion = false;
-                respuesta.valorRetorno = null;
-                respuesta.strOrigen = ex.ToString();
-            }//Fin del try-catch.
-            return respuesta;
-        }//Fin del método lfInsertar.
-
-        public Respuesta<TSH_Habitacion> lfActualizar(TSH_Habitacion user) {
-            Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
-
-            try {
-                respuesta.valorRetorno = DominioHabitacion.actualizarHabitacion(user);
-            } catch (Exception ex) {
-                respuesta.bnlIndicadorTransaccion = false;
-                respuesta.valorRetorno = null;
-                respuesta.strOrigen = ex.ToString();
-            }
-            return respuesta;
-        }//Fin del método lfActualizar.
-
-        public Respuesta<bool> lfEliminar(int id) {
-            Respuesta<bool> respuesta = new Respuesta<bool>();
-            try {
-                respuesta.valorRetorno = DominioHabitacion.eliminarHabitacion(new TSH_Habitacion { TN_Numero_Habitacion_TSH_Habitacion = id });
-            } catch (Exception ex) {
-                respuesta.bnlIndicadorTransaccion = false;
-                respuesta.valorRetorno = false;
-                respuesta.strOrigen = ex.ToString();
-            }//Fin del try-catch.
-            return respuesta;
-        }//Fin del método lfEliminar.
+        }
     }//Fin de la clase HabitacionLN.
 }//Fin del namespace.

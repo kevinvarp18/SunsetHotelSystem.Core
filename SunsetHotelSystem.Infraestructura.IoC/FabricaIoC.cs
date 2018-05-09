@@ -16,6 +16,7 @@ namespace SunsetHotelSystem.Infraestructura.IoC {
             _unityContainer = new Unity.UnityContainer();
             _unityContainer.RegisterType<IRepositorioHabitacion, RepositorioHabitacion>();
             _unityContainer.RegisterType<IRepositorioTipoHabitacion, RepositorioTipoHabitacion>();
+            _unityContainer.RegisterType<IRepositorioReserva, RepositorioReserva>();
         }//Fin del constructor.
         public static FabricaIoC Container {
             get { return _container; }

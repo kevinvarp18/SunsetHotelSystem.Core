@@ -7,17 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SunsetHotelSystem.Dominio.Entidades
+namespace SunsetHotelSystem.Dominio.Entidades.Entidades
 {
-    using Entidades;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    public partial class Sunset_HotelDBEntities : DbContext
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
+    
+    public partial class SunsetHotel_DBEntities : DbContext
     {
-        public Sunset_HotelDBEntities()
-            : base("name=Sunset_HotelDBEntities")
+        public SunsetHotel_DBEntities()
+            : base("name=SunsetHotel_DBEntities")
         {
         }
     
@@ -36,5 +37,47 @@ namespace SunsetHotelSystem.Dominio.Entidades
         public virtual DbSet<TSH_Reserva> TSH_Reserva { get; set; }
         public virtual DbSet<TSH_SobreN_Galeria> TSH_SobreN_Galeria { get; set; }
         public virtual DbSet<TSH_Tipo_Habitacion> TSH_Tipo_Habitacion { get; set; }
+    
+        public virtual ObjectResult<SP_ConsultarDisponibilidad_Result> SP_ConsultarDisponibilidad(Nullable<int> idTipoHabitacion)
+        {
+            var idTipoHabitacionParameter = idTipoHabitacion.HasValue ?
+                new ObjectParameter("idTipoHabitacion", idTipoHabitacion) :
+                new ObjectParameter("idTipoHabitacion", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ConsultarDisponibilidad_Result>("SP_ConsultarDisponibilidad", idTipoHabitacionParameter);
+        }
+    
+        public virtual ObjectResult<sp_realizarReserva_Result> sp_realizarReserva(string nombre, string apellidos, string correo, string tarjeta, Nullable<int> numero, Nullable<System.DateTime> fechaLlegada, Nullable<System.DateTime> fechaSalida)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("apellidos", apellidos) :
+                new ObjectParameter("apellidos", typeof(string));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("correo", correo) :
+                new ObjectParameter("correo", typeof(string));
+    
+            var tarjetaParameter = tarjeta != null ?
+                new ObjectParameter("tarjeta", tarjeta) :
+                new ObjectParameter("tarjeta", typeof(string));
+    
+            var numeroParameter = numero.HasValue ?
+                new ObjectParameter("numero", numero) :
+                new ObjectParameter("numero", typeof(int));
+    
+            var fechaLlegadaParameter = fechaLlegada.HasValue ?
+                new ObjectParameter("fechaLlegada", fechaLlegada) :
+                new ObjectParameter("fechaLlegada", typeof(System.DateTime));
+    
+            var fechaSalidaParameter = fechaSalida.HasValue ?
+                new ObjectParameter("fechaSalida", fechaSalida) :
+                new ObjectParameter("fechaSalida", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_realizarReserva_Result>("sp_realizarReserva", nombreParameter, apellidosParameter, correoParameter, tarjetaParameter, numeroParameter, fechaLlegadaParameter, fechaSalidaParameter);
+        }
     }
 }

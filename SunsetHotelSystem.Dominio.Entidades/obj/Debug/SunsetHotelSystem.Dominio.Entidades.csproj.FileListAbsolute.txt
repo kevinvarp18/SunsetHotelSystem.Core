@@ -2,3 +2,8 @@ C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Co
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\bin\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\obj\Debug\SunsetHotelSystem.Dominio.Entidades.dll
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\obj\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\bin\Debug\SunsetHotelSystem.Dominio.Entidades.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\bin\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\obj\Debug\SunsetHotelSystem.Dominio.Entidades.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\obj\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.Entidades\obj\Debug\SunsetHotelSystem.Dominio.Entidades.csprojResolveAssemblyReference.cache

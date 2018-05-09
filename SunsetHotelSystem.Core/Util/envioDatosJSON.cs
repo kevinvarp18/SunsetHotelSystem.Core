@@ -33,7 +33,7 @@ namespace SunsetHotelSystem.Core.Util {
             } else {
                 try {
                     value = jTokenVal.ToObject(Descriptor.ParameterType, _serializador);
-                } catch (Exception ex) {
+                } catch {
                     throw new HttpParseException(string.Join("", "No se pudo procesar el parámetro: ", Descriptor.ParameterName, ". Type: ", Descriptor.ParameterType.ToString()));
                 }
             }

@@ -8,7 +8,7 @@ using SunsetHotelSystem.Dominio.IRepositorio;
 using SunsetHotelSystem.Dominio.Entidades.Entidades;
 using SunsetHotelSystem.Dominio.UTL;
 
-namespace SunsetHotelSystem.Aplicacion.Implementación {
+namespace SunsetHotelSystem.Aplicacion.Implementacion {
     public class TipoHabitacionLN : ITipoHabitacionLN {
         #region
         private readonly IRepositorioTipoHabitacion DominioTipoHabitacion;

@@ -8,10 +8,7 @@ using SunsetHotelSystem.Dominio.UTL;
 
 namespace SunsetHotelSystem.Aplicacion.Interfaces {
     public interface IHabitacionLN {
-        Respuesta<List<TSH_Habitacion>> lfObtener();
-        Respuesta<TSH_Habitacion> lfObtener(int id);
-        Respuesta<TSH_Habitacion> lfInsertar(TSH_Habitacion habitacion);
-        Respuesta<TSH_Habitacion> lfActualizar(TSH_Habitacion habitacion);
-        Respuesta<bool> lfEliminar(int id);
+        Respuesta<List<SP_ConsultarDisponibilidad_Result>> lfConsultarHabitacionesDisponibles(int tipoHabitacion);
+        Respuesta<TSH_Habitacion> lfObtenerHabitacion(int idHabitacion);
     }//Fin de la clase IHabitacionLN.
 }//Fin del namespace.

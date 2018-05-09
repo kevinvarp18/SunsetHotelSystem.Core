@@ -34,3 +34,39 @@ C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Co
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.UTL.pdb
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\obj\Debug\SunsetHotelSystem.Infraestructura.IoC.dll
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\obj\Debug\SunsetHotelSystem.Infraestructura.IoC.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Infraestructura.IoC.dll.config
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Infraestructura.IoC.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Infraestructura.IoC.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\CommonServiceLocator.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\EntityFramework.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Aplicacion.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.Entidades.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Infraestructura.Datos.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Abstractions.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Configuration.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Container.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Interception.Configuration.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Interception.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.RegistrationByConvention.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.ServiceLocation.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.UTL.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Aplicacion.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Infraestructura.Datos.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\CommonServiceLocator.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\EntityFramework.xml
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Abstractions.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Configuration.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Container.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Interception.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.Interception.Configuration.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\Unity.ServiceLocation.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\bin\Debug\SunsetHotelSystem.Dominio.UTL.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\obj\Debug\SunsetHotelSystem.Infraestructura.IoC.csprojResolveAssemblyReference.cache
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\obj\Debug\SunsetHotelSystem.Infraestructura.IoC.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Infraestructura.IoC\obj\Debug\SunsetHotelSystem.Infraestructura.IoC.pdb

@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 using SunsetHotelSystem.Dominio.Entidades;
 using SunsetHotelSystem.Dominio.IRepositorio;
 using SunsetHotelSystem.Dominio.Entidades.Entidades;
+using System.Data.Entity.Core.Objects;
 
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioTipoHabitacion : IRepositorioTipoHabitacion {
 
-        private readonly Sunset_HotelDBEntities SS_Contexto;
+        private readonly SunsetHotel_DBEntities SS_Contexto;
 
-        public RepositorioTipoHabitacion(Sunset_HotelDBEntities contexto) {
+        public RepositorioTipoHabitacion(SunsetHotel_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
         public List<TSH_Tipo_Habitacion> obtenerTiposHabitacion() {
             List<TSH_Tipo_Habitacion> listaTiposHabitacion = new List<TSH_Tipo_Habitacion>();
-            try {
+            try{
                 listaTiposHabitacion = (from list in SS_Contexto.TSH_Tipo_Habitacion select list).ToList<TSH_Tipo_Habitacion>();
-            }catch (Exception ex) {
+            } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }
             return listaTiposHabitacion;
         }//Fin del método obtenerTiposHabitacion.
+
     }//Fin de la clase RepositorioTipoHabitacion.
 }//Fin del namespace.

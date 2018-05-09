@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Sunset_HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SunsetHotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TSH_Caracteristica_habitacion">
           <Key>
             <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
@@ -197,7 +197,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Sunset_HotelModelStoreContainer">
+        <Function Name="SP_ConsultarDisponibilidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTipoHabitacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_realizarReserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellidos" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="tarjeta" Type="varchar" Mode="In" />
+          <Parameter Name="numero" Type="int" Mode="In" />
+          <Parameter Name="fechaLlegada" Type="datetime" Mode="In" />
+          <Parameter Name="fechaSalida" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="SunsetHotelModelStoreContainer">
           <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" Schema="dbo" store:Type="Tables" />
@@ -237,11 +249,10 @@
             <End Role="TSH_Habitacion" EntitySet="TSH_Habitacion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Sunset_HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SunsetHotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TSH_Caracteristica_habitacion">
           <Key>
             <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
@@ -448,7 +459,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Sunset_HotelDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SunsetHotel_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" />
           <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
           <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" />
@@ -487,15 +498,40 @@
             <End Role="TSH_Pagina" EntitySet="TSH_Pagina" />
             <End Role="TSH_SobreN_Galeria" EntitySet="TSH_SobreN_Galeria" />
           </AssociationSet>
+          <FunctionImport Name="SP_ConsultarDisponibilidad" ReturnType="Collection(SunsetHotelModel.SP_ConsultarDisponibilidad_Result)">
+          <Parameter Name="idTipoHabitacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_realizarReserva" ReturnType="Collection(SunsetHotelModel.sp_realizarReserva_Result)">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellidos" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="tarjeta" Mode="In" Type="String" />
+            <Parameter Name="numero" Mode="In" Type="Int32" />
+            <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
+            <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="SP_ConsultarDisponibilidad_Result">
+          <Property Type="Int32" Name="TN_Identificador_TSH_Habitacion" Nullable="false" />
+          <Property Type="String" Name="TC_Descripcion_TSH_Tipo_Habitacion" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="TN_Tarifa_TSH_Tipo_Habitacion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_realizarReserva_Result">
+          <Property Type="Int32" Name="ErrorNumber" Nullable="true" />
+          <Property Type="Int32" Name="ErrorSeverity" Nullable="true" />
+          <Property Type="Int32" Name="ErrorState" Nullable="true" />
+          <Property Type="String" Name="ErrorProcedure" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="ErrorLine" Nullable="true" />
+          <Property Type="String" Name="ErrorMessage" Nullable="true" MaxLength="4000" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Sunset_HotelModelStoreContainer" CdmEntityContainer="Sunset_HotelDBEntities">
+        <EntityContainerMapping StorageEntityContainer="SunsetHotelModelStoreContainer" CdmEntityContainer="SunsetHotel_DBEntities">
           <EntitySetMapping Name="TSH_Caracteristica_habitacion">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Caracteristica_habitacion">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Caracteristica_habitacion">
               <MappingFragment StoreEntitySet="TSH_Caracteristica_habitacion">
                 <ScalarProperty Name="TN_Identificador_TSH_Caracteristica_habitacion" ColumnName="TN_Identificador_TSH_Caracteristica_habitacion" />
                 <ScalarProperty Name="TN_Id_Habitacion_TSH_Caracteristica_habitacion" ColumnName="TN_Id_Habitacion_TSH_Caracteristica_habitacion" />
@@ -504,7 +540,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Cliente">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Cliente">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Cliente">
               <MappingFragment StoreEntitySet="TSH_Cliente">
                 <ScalarProperty Name="TN_Identificador_TSH_Cliente" ColumnName="TN_Identificador_TSH_Cliente" />
                 <ScalarProperty Name="TC_Nombre_TSH_Cliente" ColumnName="TC_Nombre_TSH_Cliente" />
@@ -515,7 +551,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Habitacion">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Habitacion">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Habitacion">
               <MappingFragment StoreEntitySet="TSH_Habitacion">
                 <ScalarProperty Name="TN_Identificador_TSH_Habitacion" ColumnName="TN_Identificador_TSH_Habitacion" />
                 <ScalarProperty Name="TN_Numero_Habitacion_TSH_Habitacion" ColumnName="TN_Numero_Habitacion_TSH_Habitacion" />
@@ -529,7 +565,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Pag_Facilidades">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Pag_Facilidades">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Pag_Facilidades">
               <MappingFragment StoreEntitySet="TSH_Pag_Facilidades">
                 <ScalarProperty Name="TN_Identificador_TSH_Pag_Facilidades" ColumnName="TN_Identificador_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" ColumnName="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
@@ -540,7 +576,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Pag_Home">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Pag_Home">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Pag_Home">
               <MappingFragment StoreEntitySet="TSH_Pag_Home">
                 <ScalarProperty Name="TN_Identificador_TSH_Pag_Home" ColumnName="TN_Identificador_TSH_Pag_Home" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_Pag_Home" ColumnName="TN_Id_Imagen_TSH_Pag_Home" />
@@ -549,7 +585,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Pagina">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Pagina">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Pagina">
               <MappingFragment StoreEntitySet="TSH_Pagina">
                 <ScalarProperty Name="TN_Identificador_TSH_Pagina" ColumnName="TN_Identificador_TSH_Pagina" />
                 <ScalarProperty Name="TC_Descripcion_TSH_Tipo_Habitacion" ColumnName="TC_Descripcion_TSH_Tipo_Habitacion" />
@@ -557,7 +593,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Publicidad">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Publicidad">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Publicidad">
               <MappingFragment StoreEntitySet="TSH_Publicidad">
                 <ScalarProperty Name="TN_Identificador_TSH_Publicidad" ColumnName="TN_Identificador_TSH_Publicidad" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_Publicidad" ColumnName="TN_Id_Imagen_TSH_Publicidad" />
@@ -567,7 +603,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Reserva">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Reserva">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Reserva">
               <MappingFragment StoreEntitySet="TSH_Reserva">
                 <ScalarProperty Name="TN_Identificador_TSH_Reserva" ColumnName="TN_Identificador_TSH_Reserva" />
                 <ScalarProperty Name="TN_Numero_Reserva_TSH_Reserva" ColumnName="TN_Numero_Reserva_TSH_Reserva" />
@@ -580,7 +616,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_SobreN_Galeria">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_SobreN_Galeria">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_SobreN_Galeria">
               <MappingFragment StoreEntitySet="TSH_SobreN_Galeria">
                 <ScalarProperty Name="TN_Identificador_TSH_SobreN_Galeria" ColumnName="TN_Identificador_TSH_SobreN_Galeria" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_SobreN_Galeria" ColumnName="TN_Id_Imagen_TSH_SobreN_Galeria" />
@@ -589,7 +625,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TSH_Tipo_Habitacion">
-            <EntityTypeMapping TypeName="Sunset_HotelModel.TSH_Tipo_Habitacion">
+            <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Tipo_Habitacion">
               <MappingFragment StoreEntitySet="TSH_Tipo_Habitacion">
                 <ScalarProperty Name="TN_Identificador_TSH_Tipo_Habitacion" ColumnName="TN_Identificador_TSH_Tipo_Habitacion" />
                 <ScalarProperty Name="TN_Tarifa_TSH_Tipo_Habitacion" ColumnName="TN_Tarifa_TSH_Tipo_Habitacion" />
@@ -598,6 +634,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ConsultarDisponibilidad" FunctionName="SunsetHotelModel.Store.SP_ConsultarDisponibilidad">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SunsetHotelModel.SP_ConsultarDisponibilidad_Result">
+                <ScalarProperty Name="TN_Identificador_TSH_Habitacion" ColumnName="TN_Identificador_TSH_Habitacion" />
+                <ScalarProperty Name="TC_Descripcion_TSH_Tipo_Habitacion" ColumnName="TC_Descripcion_TSH_Tipo_Habitacion" />
+                <ScalarProperty Name="TN_Tarifa_TSH_Tipo_Habitacion" ColumnName="TN_Tarifa_TSH_Tipo_Habitacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_realizarReserva" FunctionName="SunsetHotelModel.Store.sp_realizarReserva">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SunsetHotelModel.sp_realizarReserva_Result">
+                <ScalarProperty Name="ErrorNumber" ColumnName="ErrorNumber" />
+                <ScalarProperty Name="ErrorSeverity" ColumnName="ErrorSeverity" />
+                <ScalarProperty Name="ErrorState" ColumnName="ErrorState" />
+                <ScalarProperty Name="ErrorProcedure" ColumnName="ErrorProcedure" />
+                <ScalarProperty Name="ErrorLine" ColumnName="ErrorLine" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -9,3 +9,14 @@ C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Co
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.csprojResolveAssemblyReference.cache
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.dll
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Aplicacion.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Aplicacion.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.Entidades.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.UTL.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.Entidades.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.UTL.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\bin\Debug\SunsetHotelSystem.Dominio.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.csprojResolveAssemblyReference.cache
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Aplicacion\obj\Debug\SunsetHotelSystem.Aplicacion.pdb

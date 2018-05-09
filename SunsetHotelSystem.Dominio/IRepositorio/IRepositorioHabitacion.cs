@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioHabitacion {
-        List<TSH_Habitacion> obtenerHabitaciones();
-        TSH_Habitacion obtenerHabitacionID(TSH_Habitacion habitacion);
-        TSH_Habitacion insertarHabitacion(TSH_Habitacion habitacion);
-        TSH_Habitacion actualizarHabitacion(TSH_Habitacion habitacion);
-        bool eliminarHabitacion(TSH_Habitacion habitacion);
+        List<SP_ConsultarDisponibilidad_Result> consultarHabitacionesDisponibles(int tipoHabitacion);
+        TSH_Habitacion obtenerHabitacion(int idHabitacion);
     }//Fin de la interfaz IRepositorioHabitacion.
 }//Fin del namespace.
