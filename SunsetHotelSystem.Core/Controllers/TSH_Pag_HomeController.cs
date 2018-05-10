@@ -25,5 +25,16 @@ namespace SunsetHotelSystem.Core.Controllers {
                 Formatting = Formatting.Indented
             });
         }//Fin del método obtenerPaginaHome.
+
+        [Route("")]
+        [HttpPut]
+        [ResponseType(typeof(Respuesta<TSH_Pag_Home>))]
+        public IHttpActionResult actualizarPaginaHome([FromBody]TSH_Pag_Home paginaHome) {
+            HomeLN homeLN = FabricaIoC.Container.Resolver<HomeLN>();
+            return Json(homeLN.lfActualizar(paginaHome), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método actualizarPaginaHome
     }//Fin de la clase TSH_Pag_HomeController
 }//Fin del namespace.

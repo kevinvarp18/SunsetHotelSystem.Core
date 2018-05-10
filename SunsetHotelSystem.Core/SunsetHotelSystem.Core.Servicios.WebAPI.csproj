@@ -172,6 +172,7 @@
     <Compile Include="Controllers\TSH_Pag_HomeController.cs" />
     <Compile Include="Controllers\TSH_ReservaController.cs" />
     <Compile Include="Controllers\TSH_HabitacionController.cs" />
+    <Compile Include="Controllers\TSH_SobreN_GaleriaController.cs" />
     <Compile Include="Controllers\TSH_Tipo_HabitacionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +208,7 @@
     <Folder Include="Scripts\" />
     <Folder Include="Views\Reserva\" />
     <Folder Include="Views\TSH_Pag_Home\" />
+    <Folder Include="Views\TSH_SobreN_Galeria\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

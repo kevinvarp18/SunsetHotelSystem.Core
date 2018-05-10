@@ -30,5 +30,18 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfObtenerPorID.
+
+        public Respuesta<TSH_Pag_Home> lfActualizar(TSH_Pag_Home paginaHome) {
+            Respuesta<TSH_Pag_Home> respuesta = new Respuesta<TSH_Pag_Home>();
+
+            try {
+                respuesta.valorRetorno = DominioHome.actualizar(paginaHome);
+            } catch (Exception ex) {
+                respuesta.bnlIndicadorTransaccion = false;
+                respuesta.valorRetorno = null;
+                respuesta.strOrigen = ex.ToString();
+            }//Fin del try-catch.
+            return respuesta;
+        }//Fin del método lfActualizar.
     }//Fin de la clase HomeLN.
 }//Fin del namespace.

@@ -9,5 +9,6 @@ using SunsetHotelSystem.Dominio.UTL;
 namespace SunsetHotelSystem.Aplicacion.Interfaces {
     public interface IHomeLN {
         Respuesta<TSH_Pag_Home> lfObtenerPorID(int idPagina);
+        Respuesta<TSH_Pag_Home> lfActualizar(TSH_Pag_Home paginaHome);
     }//Fin de la interfaz IHomeLN.
 }//Fin del namespace.
