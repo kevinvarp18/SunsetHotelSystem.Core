@@ -156,9 +156,6 @@ C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem\Su
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.Servicios.WebAPI.csprojResolveAssemblyReference.cache
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.dll
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.pdb
-C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.Servicios.WebAPI.csprojResolveAssemblyReference.cache
-C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.dll
-C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.pdb
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\ApplicationInsights.config
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\roslyn\csc.exe
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -235,3 +232,6 @@ C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\Suns
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\SunsetHotelSystem.Dominio.pdb
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\Unity.Abstractions.pdb
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\bin\Unity.Container.pdb
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.Servicios.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.dll
+C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Core\obj\Debug\SunsetHotelSystem.Core.pdb

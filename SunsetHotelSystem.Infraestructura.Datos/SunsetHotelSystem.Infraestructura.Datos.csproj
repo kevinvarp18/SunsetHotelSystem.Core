@@ -51,20 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelo\SunsetHotelModel.Context.cs">
+    <Compile Include="Modelo\SunsetHotelSystemModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SunsetHotelModel.Context.tt</DependentUpon>
+      <DependentUpon>SunsetHotelSystemModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\SunsetHotelModel.Designer.cs">
+    <Compile Include="Modelo\SunsetHotelSystemModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SunsetHotelModel.edmx</DependentUpon>
+      <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\RepositorioBase.cs" />
     <Compile Include="Repositorio\RepositorioHabitacion.cs" />
-    <Compile Include="Repositorio\RepositorioHome.cs" />
+    <Compile Include="Repositorio\RepositorioPagina.cs" />
     <Compile Include="Repositorio\RepositorioReserva.cs" />
     <Compile Include="Repositorio\RepositorioTipoHabitacion.cs" />
   </ItemGroup>
@@ -80,12 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Modelo\SunsetHotelModel.edmx">
+    <EntityDeploy Include="Modelo\SunsetHotelSystemModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SunsetHotelModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SunsetHotelSystemModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Modelo\SunsetHotelModel.edmx.diagram">
-      <DependentUpon>SunsetHotelModel.edmx</DependentUpon>
+    <None Include="Modelo\SunsetHotelSystemModel.edmx.diagram">
+      <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -94,10 +93,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Modelo\SunsetHotelModel.Context.tt">
+    <Content Include="Modelo\SunsetHotelSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SunsetHotelModel.edmx</DependentUpon>
-      <LastGenOutput>SunsetHotelModel.Context.cs</LastGenOutput>
+      <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
+      <LastGenOutput>SunsetHotelSystemModel.Context.cs</LastGenOutput>
       <CustomToolNamespace>SunsetHotelSystem.Dominio.Entidades.Entidades</CustomToolNamespace>
     </Content>
   </ItemGroup>

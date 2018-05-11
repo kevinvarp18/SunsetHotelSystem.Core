@@ -65,6 +65,7 @@
     <NavigationProperty Name="TSH_Pag_Facilidades" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pagina" ToRole="TSH_Pag_Facilidades" />
     <NavigationProperty Name="TSH_Pag_Home" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Home" FromRole="TSH_Pagina" ToRole="TSH_Pag_Home" />
     <NavigationProperty Name="TSH_SobreN_Galeria" Relationship="Self.FKTSH_Pagina_REL_TSH_SobreN_Galeria" FromRole="TSH_Pagina" ToRole="TSH_SobreN_Galeria" />
+    <Property Name="TC_Descripcion_TSH_Pagina" Type="String" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TSH_Publicidad">
     <Key>

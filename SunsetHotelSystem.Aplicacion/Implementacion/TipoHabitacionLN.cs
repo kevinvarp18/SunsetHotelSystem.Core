@@ -23,10 +23,12 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
 
             try {
                 respuesta.valorRetorno = DominioTipoHabitacion.obtener();
+                respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
+                respuesta.resultado = 0;
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfObtener.

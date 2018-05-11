@@ -12,15 +12,15 @@ using System.Web.Http;
 using System.Web.Http.Description;
 
 namespace SunsetHotelSystem.Core.Controllers {
-    [RoutePrefix("api/TSH_Pag_Home")]
-    public class TSH_Pag_HomeController : ApiController {
-        [Route("")]
+    [RoutePrefix("api/TSH_Pagina")]
+    public class TSH_PaginaController : ApiController {
+        [Route("{idPagina}")]
         [HttpGet]
-        [ResponseType(typeof(Respuesta<TSH_Pag_Home>))]
-        public IHttpActionResult obtenerPaginaHome() {
-            Respuesta<List<TSH_Pag_Home>> respuesta = new Respuesta<List<TSH_Pag_Home>>();
-            var homeLN = FabricaIoC.Container.Resolver<HomeLN>();
-            return Json(homeLN.lfObtenerPorID(5), new JsonSerializerSettings() {
+        [ResponseType(typeof(Respuesta<TSH_Pagina>))]
+        public IHttpActionResult obtenerPaginaHome(int idPagina) {
+            Respuesta<TSH_Pagina> respuesta = new Respuesta<TSH_Pagina>();
+            var paginaLN = FabricaIoC.Container.Resolver<PaginaLN>();
+            return Json(paginaLN.lfObtenerPorID(idPagina), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
@@ -28,10 +28,10 @@ namespace SunsetHotelSystem.Core.Controllers {
 
         [Route("")]
         [HttpPut]
-        [ResponseType(typeof(Respuesta<TSH_Pag_Home>))]
-        public IHttpActionResult actualizarPaginaHome([FromBody]TSH_Pag_Home paginaHome) {
-            HomeLN homeLN = FabricaIoC.Container.Resolver<HomeLN>();
-            return Json(homeLN.lfActualizar(paginaHome), new JsonSerializerSettings() {
+        [ResponseType(typeof(Respuesta<TSH_Pagina>))]
+        public IHttpActionResult actualizarPaginaHome([FromBody]TSH_Pagina pagina) {
+            PaginaLN paginaLN = FabricaIoC.Container.Resolver<PaginaLN>();
+            return Json(paginaLN.lfActualizar(pagina), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });

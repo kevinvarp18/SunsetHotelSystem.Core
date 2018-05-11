@@ -7,8 +7,8 @@ using SunsetHotelSystem.Dominio.Entidades.Entidades;
 using SunsetHotelSystem.Dominio.UTL;
 
 namespace SunsetHotelSystem.Aplicacion.Interfaces {
-    public interface IHomeLN {
-        Respuesta<TSH_Pag_Home> lfObtenerPorID(int idPagina);
-        Respuesta<TSH_Pag_Home> lfActualizar(TSH_Pag_Home paginaHome);
+    public interface IPaginaLN {
+        Respuesta<TSH_Pagina> lfObtenerPorID(int idPagina);
+        Respuesta<TSH_Pagina> lfActualizar(TSH_Pagina pagina);
     }//Fin de la interfaz IHomeLN.
 }//Fin del namespace.

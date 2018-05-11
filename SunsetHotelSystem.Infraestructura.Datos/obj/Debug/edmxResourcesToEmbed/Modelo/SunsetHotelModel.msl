@@ -58,8 +58,8 @@
     <EntitySetMapping Name="TSH_Pagina">
       <EntityTypeMapping TypeName="SunsetHotelModel.TSH_Pagina">
         <MappingFragment StoreEntitySet="TSH_Pagina">
+          <ScalarProperty Name="TC_Descripcion_TSH_Pagina" ColumnName="TC_Descripcion_TSH_Pagina" />
           <ScalarProperty Name="TN_Identificador_TSH_Pagina" ColumnName="TN_Identificador_TSH_Pagina" />
-          <ScalarProperty Name="TC_Descripcion_TSH_Tipo_Habitacion" ColumnName="TC_Descripcion_TSH_Tipo_Habitacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

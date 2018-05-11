@@ -54,7 +54,7 @@
       <PropertyRef Name="TN_Identificador_TSH_Pagina" />
     </Key>
     <Property Name="TN_Identificador_TSH_Pagina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TC_Descripcion_TSH_Tipo_Habitacion" Type="varchar" MaxLength="1500" Nullable="false" />
+    <Property Name="TC_Descripcion_TSH_Pagina" Type="varchar" MaxLength="1500" Nullable="false" />
   </EntityType>
   <EntityType Name="TSH_Publicidad">
     <Key>

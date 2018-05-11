@@ -9,37 +9,41 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Aplicacion.Implementacion {
-    public class HomeLN : IHomeLN {
+    public class PaginaLN : IPaginaLN {
         #region
-        private readonly IRepositorioHome DominioHome;
+        private readonly IRepositorioPagina DominioHome;
         #endregion
 
-        public HomeLN(IRepositorioHome repositorio) {
+        public PaginaLN(IRepositorioPagina repositorio) {
             DominioHome = repositorio;
         }//Fin del constructor.
 
-        public Respuesta<TSH_Pag_Home> lfObtenerPorID(int idPagina) {
-            Respuesta<TSH_Pag_Home> respuesta = new Respuesta<TSH_Pag_Home>();
+        public Respuesta<TSH_Pagina> lfObtenerPorID(int idPagina) {
+            Respuesta<TSH_Pagina> respuesta = new Respuesta<TSH_Pagina>();
 
             try {
                 respuesta.valorRetorno = DominioHome.obtenerPorID(idPagina);
+                respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
+                respuesta.resultado = 0;
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfObtenerPorID.
 
-        public Respuesta<TSH_Pag_Home> lfActualizar(TSH_Pag_Home paginaHome) {
-            Respuesta<TSH_Pag_Home> respuesta = new Respuesta<TSH_Pag_Home>();
+        public Respuesta<TSH_Pagina> lfActualizar(TSH_Pagina pagina) {
+            Respuesta<TSH_Pagina> respuesta = new Respuesta<TSH_Pagina>();
 
             try {
-                respuesta.valorRetorno = DominioHome.actualizar(paginaHome);
+                respuesta.valorRetorno = DominioHome.actualizar(pagina);
+                respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
                 respuesta.valorRetorno = null;
                 respuesta.strOrigen = ex.ToString();
+                respuesta.resultado = 0;
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfActualizar.
