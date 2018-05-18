@@ -17,24 +17,24 @@ namespace SunsetHotelSystem.Core.Controllers {
         [Route("{idPagina}")]
         [HttpGet]
         [ResponseType(typeof(Respuesta<TSH_Pagina>))]
-        public IHttpActionResult obtenerPaginaHome(int idPagina) {
+        public IHttpActionResult obtenerPagina(int idPagina) {
             Respuesta<TSH_Pagina> respuesta = new Respuesta<TSH_Pagina>();
             var paginaLN = FabricaIoC.Container.Resolver<PaginaLN>();
             return Json(paginaLN.lfObtenerPorID(idPagina), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método obtenerPaginaHome.
+        }//Fin del método obtenerPagina.
 
         [Route("")]
         [HttpPut]
         [ResponseType(typeof(Respuesta<TSH_Pagina>))]
-        public IHttpActionResult actualizarPaginaHome([FromBody]TSH_Pagina pagina) {
+        public IHttpActionResult actualizarPagina([FromBody]TSH_Pagina pagina) {
             PaginaLN paginaLN = FabricaIoC.Container.Resolver<PaginaLN>();
             return Json(paginaLN.lfActualizar(pagina), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método actualizarPaginaHome
-    }//Fin de la clase TSH_Pag_HomeController
+        }//Fin del método actualizarPagina
+    }//Fin de la clase TSH_PaginaController
 }//Fin del namespace.

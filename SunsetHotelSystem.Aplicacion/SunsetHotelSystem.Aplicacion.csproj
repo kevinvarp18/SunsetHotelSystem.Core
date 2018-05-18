@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementacion\FacilidadesLN.cs" />
     <Compile Include="Implementacion\HabitacionLN.cs" />
     <Compile Include="Implementacion\PaginaLN.cs" />
     <Compile Include="Implementacion\ReservaLN.cs" />
     <Compile Include="Implementacion\TipoHabitacionLN.cs" />
+    <Compile Include="Interfaces\IFacilidadesLN.cs" />
     <Compile Include="Interfaces\IHabitacionLN.cs" />
     <Compile Include="Interfaces\IPaginaLN.cs" />
     <Compile Include="Interfaces\IReservaLN.cs" />
