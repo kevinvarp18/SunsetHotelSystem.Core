@@ -4,6 +4,5 @@ C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Co
 C:\Users\Kevin Vargas\Documents\Visual Studio 2015\Projects\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\obj\Debug\SunsetHotelSystem.Dominio.UTL.pdb
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\bin\Debug\SunsetHotelSystem.Dominio.UTL.dll
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\bin\Debug\SunsetHotelSystem.Dominio.UTL.pdb
-C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\obj\Debug\SunsetHotelSystem.Dominio.UTL.csprojResolveAssemblyReference.cache
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\obj\Debug\SunsetHotelSystem.Dominio.UTL.dll
 C:\Users\Kevin Vargas\Source\Repos\SunsetHotelSystem\SunsetHotelSystem.Core\SunsetHotelSystem.Dominio.UTL\obj\Debug\SunsetHotelSystem.Dominio.UTL.pdb

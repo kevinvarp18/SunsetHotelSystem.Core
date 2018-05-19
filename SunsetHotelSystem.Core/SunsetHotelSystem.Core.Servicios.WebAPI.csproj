@@ -207,7 +207,6 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Reserva\" />
-    <Folder Include="Views\TSH_Pag_Facilidades\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

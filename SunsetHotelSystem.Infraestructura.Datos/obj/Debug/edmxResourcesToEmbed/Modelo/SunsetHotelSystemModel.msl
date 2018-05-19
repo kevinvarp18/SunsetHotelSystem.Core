@@ -34,6 +34,7 @@
           <ScalarProperty Name="TN_Id_Imagen_TSH_Pag_Facilidades" ColumnName="TN_Id_Imagen_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
+          <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

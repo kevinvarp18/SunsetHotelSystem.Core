@@ -51,53 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelo\SP_ConsultarDisponibilidad_Result.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\sp_realizarReserva_Result.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\SunsetHotelSystemModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SunsetHotelSystemModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\SunsetHotelSystemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\SunsetHotelSystemModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Cliente.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Habitacion.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Pagina.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Pag_Facilidades.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Pag_Home.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Publicidad.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Reserva.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_SobreN_Galeria.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\TSH_Tipo_Habitacion.cs">
-      <DependentUpon>SunsetHotelSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\RepositorioFacilidades.cs" />
@@ -136,11 +98,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
       <LastGenOutput>SunsetHotelSystemModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Modelo\SunsetHotelSystemModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
-      <LastGenOutput>SunsetHotelSystemModel.cs</LastGenOutput>
+      <CustomToolNamespace>SunsetHotelSystem.Dominio.Entidades.Entidades</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

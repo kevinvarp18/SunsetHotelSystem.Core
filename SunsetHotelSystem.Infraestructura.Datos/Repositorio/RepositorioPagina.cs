@@ -38,7 +38,25 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 dbTransaccion.Rollback();
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
+            actualizarSubPagina(pagina);
             return pagina;
         }//Fin del método actualizar.
+
+        public void actualizarSubPagina(TSH_Pagina pagina) {
+            DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
+
+            try {
+                if (pagina.TN_Identificador_TSH_Pagina == 5) {
+                    var entity = SS_Contexto.TSH_Pag_Home.Find(pagina.TN_Identificador_TSH_Pagina);
+                    SS_Contexto.Entry(entity).CurrentValues.SetValues(pagina.TSH_Pag_Home);
+                }//Fin del if.
+
+                SS_Contexto.SaveChanges();
+                dbTransaccion.Commit();
+            } catch (Exception ex) {
+                dbTransaccion.Rollback();
+                throw new Exception(ex.ToString());
+            }//Fin del try-catch.
+        }//Fin del método actualizarSubPagina.
     }//Fin de la clase RepositorioHome.
 }//Fin del namespace.

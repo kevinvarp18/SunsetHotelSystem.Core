@@ -25,13 +25,14 @@
   </EntityType>
   <EntityType Name="TSH_Pag_Facilidades">
     <Key>
-      <PropertyRef Name="TN_Identificador_TSH_Pag_Facilidades" />
+      <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
     </Key>
     <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
     <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
     <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="varbinary(max)" />
     <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
+    <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="TSH_Pag_Home">
     <Key>
@@ -39,7 +40,7 @@
     </Key>
     <Property Name="TN_Identificador_TSH_Pag_Home" Type="int" Nullable="false" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Home" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="TI_Imagen_TSH_Pag_Home" Type="varbinary(max)" />
+    <Property Name="TI_Imagen_TSH_Pag_Home" Type="image" />
   </EntityType>
   <EntityType Name="TSH_Pagina">
     <Key>
@@ -118,7 +119,7 @@
     <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="0..1" />
+    <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TSH_Pagina">
         <PropertyRef Name="TN_Identificador_TSH_Pagina" />

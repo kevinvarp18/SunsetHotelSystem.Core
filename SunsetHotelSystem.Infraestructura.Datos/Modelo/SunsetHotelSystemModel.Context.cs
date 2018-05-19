@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SunsetHotelSystem.Infraestructura.Datos.Modelo
+namespace SunsetHotelSystem.Dominio.Entidades.Entidades
 {
     using System;
     using System.Data.Entity;
