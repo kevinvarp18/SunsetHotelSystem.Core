@@ -30,13 +30,14 @@
         </EntityType>
         <EntityType Name="TSH_Pag_Facilidades">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_Pag_Facilidades" />
+            <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
           </Key>
           <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
           <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="varbinary(max)" />
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
+          <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
           <Key>
@@ -44,7 +45,7 @@
           </Key>
           <Property Name="TN_Identificador_TSH_Pag_Home" Type="int" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Home" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TI_Imagen_TSH_Pag_Home" Type="varbinary(max)" />
+          <Property Name="TI_Imagen_TSH_Pag_Home" Type="image" />
         </EntityType>
         <EntityType Name="TSH_Pagina">
           <Key>
@@ -123,7 +124,7 @@
           <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="0..1" />
+          <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Pagina">
               <PropertyRef Name="TN_Identificador_TSH_Pagina" />
@@ -255,13 +256,14 @@
         </EntityType>
         <EntityType Name="TSH_Pag_Facilidades">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_Pag_Facilidades" />
+            <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
           </Key>
           <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
           <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="Guid" Nullable="false" />
           <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
@@ -371,7 +373,7 @@
           <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="0..1" />
+          <End Role="TSH_Pag_Facilidades" Type="Self.TSH_Pag_Facilidades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Pagina">
               <PropertyRef Name="TN_Identificador_TSH_Pagina" />
@@ -508,6 +510,7 @@
                 <ScalarProperty Name="TN_Id_Imagen_TSH_Pag_Facilidades" ColumnName="TN_Id_Imagen_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
+                <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

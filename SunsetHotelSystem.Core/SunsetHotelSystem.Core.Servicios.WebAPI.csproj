@@ -170,6 +170,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TSH_PaginaController.cs" />
+    <Compile Include="Controllers\TSH_Pag_FacilidadesController.cs" />
     <Compile Include="Controllers\TSH_ReservaController.cs" />
     <Compile Include="Controllers\TSH_HabitacionController.cs" />
     <Compile Include="Controllers\TSH_Tipo_HabitacionController.cs" />
@@ -206,6 +207,7 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Reserva\" />
+    <Folder Include="Views\TSH_Pag_Facilidades\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
