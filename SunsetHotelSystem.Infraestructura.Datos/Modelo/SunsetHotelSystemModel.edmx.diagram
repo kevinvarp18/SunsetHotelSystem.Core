@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d1f2609e4f0d465db2728ed6fe4327a9" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="a9dfa5d5227848a09735635fb6e912e0" Name="Diagram1">
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Cliente" Width="1.5" PointX="8" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Habitacion" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Facilidades" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Home" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Facilidades" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Home" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pagina" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Publicidad" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Reserva" Width="1.5" PointX="10.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_SobreN_Galeria" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_SobreN_Galeria" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Tipo_Habitacion" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Cliente_REL_TSH_Reserva" ManuallyRouted="false" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Habitacion_REL_TSH_Reserva" ManuallyRouted="false" />
