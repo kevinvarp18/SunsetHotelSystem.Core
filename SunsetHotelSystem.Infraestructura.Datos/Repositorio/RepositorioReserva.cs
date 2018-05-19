@@ -18,14 +18,9 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
         }//Fin del constructor.
 
         public TSH_Reserva insertar(TSH_Reserva reserva) {
-            DbContextTransaction dbTransaction = SS_Contexto.Database.BeginTransaction();
-
             try {
                 SS_Contexto.sp_realizarReserva(reserva.TSH_Cliente.TC_Nombre_TSH_Cliente, reserva.TSH_Cliente.TC_Apellidos_TSH_Cliente, reserva.TSH_Cliente.TC_correo_TSH_Cliente, reserva.TSH_Cliente.TC_Tarjeta_TSH_Cliente, reserva.TN_Num_Habitacion_TSH_Reserva, reserva.TD_Fecha_Ingreso_TSH_Reserva, reserva.TD_Fecha_Salida_TSH_Reserva);
-                SS_Contexto.SaveChanges();
-                dbTransaction.Commit();
             } catch (Exception ex) {
-                dbTransaction.Rollback();
                 throw new Exception(ex.ToString());
             }
             return reserva;
