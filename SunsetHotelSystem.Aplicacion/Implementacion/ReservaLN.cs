@@ -14,6 +14,10 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
         private readonly IRepositorioReserva DominioReserva;
         #endregion
 
+        public ReservaLN(IRepositorioReserva repositorio) {
+            DominioReserva = repositorio;
+        }//Fin del constructor.
+
         public Respuesta<TSH_Reserva> lfInsertar(TSH_Reserva reserva) {
             Respuesta<TSH_Reserva> respuesta = new Respuesta<TSH_Reserva>();
 
@@ -28,5 +32,20 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfInsertar.
+
+        public Respuesta<List<TSH_Reserva>> lfObtener() {
+            Respuesta<List<TSH_Reserva>> respuesta = new Respuesta<List<TSH_Reserva>>();
+
+            try {
+                respuesta.valorRetorno = DominioReserva.obtener();
+                respuesta.resultado = 1;
+            } catch (Exception ex) {
+                respuesta.bnlIndicadorTransaccion = false;
+                respuesta.valorRetorno = null;
+                respuesta.strOrigen = ex.ToString();
+                respuesta.resultado = 0;
+            }//Fin del try-catch.
+            return respuesta;
+        }//Fin del método lfObtener.
     }//Fin de la clase ReservaLN.
 }//Fin del namespace.

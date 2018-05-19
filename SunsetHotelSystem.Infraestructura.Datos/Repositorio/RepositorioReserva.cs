@@ -31,5 +31,15 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             return reserva;
         }//Fin del método insertarReserva.
 
+        public List<TSH_Reserva> obtener() {
+            List<TSH_Reserva> listaReservas = new List<TSH_Reserva>();
+            try {
+                listaReservas = (from list in SS_Contexto.TSH_Reserva select list).ToList<TSH_Reserva>();
+            } catch (Exception ex) {
+                throw new Exception(ex.ToString());
+            }
+            return listaReservas;
+        }//Fin del método obtenerTiposHabitacion.
+
     }//Fin de la clase RepositorioReserva.
 }//Fin del namespace.

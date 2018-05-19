@@ -26,5 +26,19 @@ namespace SunsetHotelSystem.Core.Controllers {
             });
         }
 
+        [Route("")]
+        [HttpGet]
+        [ResponseType(typeof(Respuesta<List<TSH_Reserva>>))]
+        public IHttpActionResult obtenerReservas()
+        {
+            Respuesta<List<TSH_Reserva>> respuesta = new Respuesta<List<TSH_Reserva>>();
+            var reservaLN = FabricaIoC.Container.Resolver<ReservaLN>();
+            return Json(reservaLN.lfObtener(), new JsonSerializerSettings()
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método HabitacionDisponible.
+
     }//Fin de la clase ReservaController.
 }//Fin del namespace.
