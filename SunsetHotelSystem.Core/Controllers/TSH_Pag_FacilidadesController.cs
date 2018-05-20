@@ -25,5 +25,17 @@ namespace SunsetHotelSystem.Core.Controllers {
                 Formatting = Formatting.Indented
             });
         }//Fin del método obtenerPagina.
+
+        [Route("")]
+        [HttpPut]
+        [ResponseType(typeof(Respuesta<TSH_Pagina>))]
+        public IHttpActionResult actualizarFacilidades([FromBody]TSH_Pag_Facilidades facilidad) {
+            FacilidadesLN facilidadesLN = FabricaIoC.Container.Resolver<FacilidadesLN>();
+            return Json(facilidadesLN.lfActualizar(facilidad), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método actualizarFacilidades.
+
     }//Fin de la clase TSH_Pag_FacilidadesController
 }//Fin del namespace.

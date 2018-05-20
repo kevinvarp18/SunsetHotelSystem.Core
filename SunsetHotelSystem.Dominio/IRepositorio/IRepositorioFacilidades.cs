@@ -8,5 +8,6 @@ using SunsetHotelSystem.Dominio.Entidades.Entidades;
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioFacilidades {
         List<TSH_Pag_Facilidades> obtener();
+        void actualizar(TSH_Pag_Facilidades facilidad);
     }//Fin de la interfaz IFacilidades.
 }//Fin del namespace.
