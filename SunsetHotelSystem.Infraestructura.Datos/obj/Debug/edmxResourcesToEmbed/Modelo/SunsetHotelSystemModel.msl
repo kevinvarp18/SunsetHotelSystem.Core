@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SunsetHotelSystemModelStoreContainer" CdmEntityContainer="SunsetHotel_DBEntities">
+  <EntityContainerMapping StorageEntityContainer="SunsetHotelSystemModelStoreContainer" CdmEntityContainer="SunsetHotelSystem_DBEntities">
     <EntitySetMapping Name="TSH_Cliente">
       <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Cliente">
         <MappingFragment StoreEntitySet="TSH_Cliente">
           <ScalarProperty Name="TN_Identificador_TSH_Cliente" ColumnName="TN_Identificador_TSH_Cliente" />
           <ScalarProperty Name="TC_Nombre_TSH_Cliente" ColumnName="TC_Nombre_TSH_Cliente" />
           <ScalarProperty Name="TC_Apellidos_TSH_Cliente" ColumnName="TC_Apellidos_TSH_Cliente" />
-          <ScalarProperty Name="TC_correo_TSH_Cliente" ColumnName="TC_correo_TSH_Cliente" />
           <ScalarProperty Name="TC_Tarjeta_TSH_Cliente" ColumnName="TC_Tarjeta_TSH_Cliente" />
+          <ScalarProperty Name="TC_Correo_TSH_Cliente" ColumnName="TC_Correo_TSH_Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,9 +32,9 @@
           <ScalarProperty Name="TN_Identificador_TSH_Pag_Facilidades" ColumnName="TN_Identificador_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" ColumnName="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TN_Id_Imagen_TSH_Pag_Facilidades" ColumnName="TN_Id_Imagen_TSH_Pag_Facilidades" />
-          <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
+          <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

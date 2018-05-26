@@ -37,7 +37,7 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             Respuesta<TSH_Pagina> respuesta = new Respuesta<TSH_Pagina>();
 
             try {
-                respuesta.valorRetorno = DominioHome.actualizar(pagina);
+                DominioHome.actualizar(pagina);
                 respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;

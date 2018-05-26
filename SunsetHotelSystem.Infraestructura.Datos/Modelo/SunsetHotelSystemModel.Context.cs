@@ -15,10 +15,10 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class SunsetHotel_DBEntities : DbContext
+    public partial class SunsetHotelSystem_DBEntities : DbContext
     {
-        public SunsetHotel_DBEntities()
-            : base("name=SunsetHotel_DBEntities")
+        public SunsetHotelSystem_DBEntities()
+            : base("name=SunsetHotelSystem_DBEntities")
         {
         }
     
@@ -46,7 +46,7 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ConsultarDisponibilidad_Result>("SP_ConsultarDisponibilidad", idTipoHabitacionParameter);
         }
     
-        public virtual ObjectResult<sp_realizarReserva_Result> sp_realizarReserva(string nombre, string apellidos, string correo, string tarjeta, Nullable<int> numero, Nullable<System.DateTime> fechaLlegada, Nullable<System.DateTime> fechaSalida)
+        public virtual ObjectResult<sp_realizarReserva_Result> sp_realizarReserva(string nombre, string apellidos, string correo, string tarjeta, Nullable<System.Guid> idReserva, Nullable<int> numero, Nullable<System.DateTime> fechaLlegada, Nullable<System.DateTime> fechaSalida)
         {
             var nombreParameter = nombre != null ?
                 new ObjectParameter("nombre", nombre) :
@@ -64,6 +64,10 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
                 new ObjectParameter("tarjeta", tarjeta) :
                 new ObjectParameter("tarjeta", typeof(string));
     
+            var idReservaParameter = idReserva.HasValue ?
+                new ObjectParameter("idReserva", idReserva) :
+                new ObjectParameter("idReserva", typeof(System.Guid));
+    
             var numeroParameter = numero.HasValue ?
                 new ObjectParameter("numero", numero) :
                 new ObjectParameter("numero", typeof(int));
@@ -76,7 +80,7 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
                 new ObjectParameter("fechaSalida", fechaSalida) :
                 new ObjectParameter("fechaSalida", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_realizarReserva_Result>("sp_realizarReserva", nombreParameter, apellidosParameter, correoParameter, tarjetaParameter, numeroParameter, fechaLlegadaParameter, fechaSalidaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_realizarReserva_Result>("sp_realizarReserva", nombreParameter, apellidosParameter, correoParameter, tarjetaParameter, idReservaParameter, numeroParameter, fechaLlegadaParameter, fechaSalidaParameter);
         }
     }
 }

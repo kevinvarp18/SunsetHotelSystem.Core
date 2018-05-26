@@ -12,8 +12,8 @@
           <Property Name="TN_Identificador_TSH_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TC_Nombre_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TC_Apellidos_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="TC_correo_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TC_Tarjeta_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="TC_Correo_TSH_Cliente" Type="varchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="TSH_Habitacion">
           <Key>
@@ -35,9 +35,9 @@
           <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
           <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="varbinary(max)" />
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
           <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
+          <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="image" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
           <Key>
@@ -184,6 +184,7 @@
           <Parameter Name="apellidos" Type="varchar" Mode="In" />
           <Parameter Name="correo" Type="varchar" Mode="In" />
           <Parameter Name="tarjeta" Type="varchar" Mode="In" />
+          <Parameter Name="idReserva" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="numero" Type="int" Mode="In" />
           <Parameter Name="fechaLlegada" Type="datetime" Mode="In" />
           <Parameter Name="fechaSalida" Type="datetime" Mode="In" />
@@ -235,8 +236,8 @@
           <Property Name="TN_Identificador_TSH_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TC_Nombre_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_Apellidos_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TC_correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_Tarjeta_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TC_Correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Cliente" ToRole="TSH_Reserva" />
         </EntityType>
         <EntityType Name="TSH_Habitacion">
@@ -261,9 +262,9 @@
           <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
           <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="Guid" Nullable="false" />
-          <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
@@ -411,7 +412,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SunsetHotel_DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SunsetHotelSystem_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
           <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" />
           <EntitySet Name="TSH_Pag_Facilidades" EntityType="Self.TSH_Pag_Facilidades" />
@@ -453,6 +454,7 @@
             <Parameter Name="apellidos" Mode="In" Type="String" />
             <Parameter Name="correo" Mode="In" Type="String" />
             <Parameter Name="tarjeta" Mode="In" Type="String" />
+            <Parameter Name="idReserva" Mode="In" Type="Guid" />
             <Parameter Name="numero" Mode="In" Type="Int32" />
             <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
             <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
@@ -476,15 +478,15 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SunsetHotelSystemModelStoreContainer" CdmEntityContainer="SunsetHotel_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="SunsetHotelSystemModelStoreContainer" CdmEntityContainer="SunsetHotelSystem_DBEntities">
           <EntitySetMapping Name="TSH_Cliente">
             <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Cliente">
               <MappingFragment StoreEntitySet="TSH_Cliente">
                 <ScalarProperty Name="TN_Identificador_TSH_Cliente" ColumnName="TN_Identificador_TSH_Cliente" />
                 <ScalarProperty Name="TC_Nombre_TSH_Cliente" ColumnName="TC_Nombre_TSH_Cliente" />
                 <ScalarProperty Name="TC_Apellidos_TSH_Cliente" ColumnName="TC_Apellidos_TSH_Cliente" />
-                <ScalarProperty Name="TC_correo_TSH_Cliente" ColumnName="TC_correo_TSH_Cliente" />
                 <ScalarProperty Name="TC_Tarjeta_TSH_Cliente" ColumnName="TC_Tarjeta_TSH_Cliente" />
+                <ScalarProperty Name="TC_Correo_TSH_Cliente" ColumnName="TC_Correo_TSH_Cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -508,9 +510,9 @@
                 <ScalarProperty Name="TN_Identificador_TSH_Pag_Facilidades" ColumnName="TN_Identificador_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" ColumnName="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_Pag_Facilidades" ColumnName="TN_Id_Imagen_TSH_Pag_Facilidades" />
-                <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
+                <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

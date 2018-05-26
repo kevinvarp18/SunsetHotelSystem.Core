@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioReserva {
-        TSH_Reserva insertar(TSH_Reserva reserva);
+        void insertar(TSH_Reserva reserva);
         List<TSH_Reserva> obtener();
     }//Fin de la interfaz IRepositorioReserva.
 }//Fin del namespace.

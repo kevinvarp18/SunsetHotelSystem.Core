@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioPagina {
         TSH_Pagina obtenerPorID(int idPagina);
-        TSH_Pagina actualizar(TSH_Pagina pagina);
+        void actualizar(TSH_Pagina pagina);
     }//Fin de la interfaz IRepositorioHome.
 }//Fin del namespace.

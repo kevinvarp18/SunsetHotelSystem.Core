@@ -7,8 +7,8 @@
     <Property Name="TN_Identificador_TSH_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TC_Nombre_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="TC_Apellidos_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="TC_correo_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="TC_Tarjeta_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="TC_Correo_TSH_Cliente" Type="varchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="TSH_Habitacion">
     <Key>
@@ -30,9 +30,9 @@
     <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
     <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="varbinary(max)" />
     <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
     <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
+    <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="image" />
   </EntityType>
   <EntityType Name="TSH_Pag_Home">
     <Key>
@@ -179,6 +179,7 @@
     <Parameter Name="apellidos" Type="varchar" Mode="In" />
     <Parameter Name="correo" Type="varchar" Mode="In" />
     <Parameter Name="tarjeta" Type="varchar" Mode="In" />
+    <Parameter Name="idReserva" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="numero" Type="int" Mode="In" />
     <Parameter Name="fechaLlegada" Type="datetime" Mode="In" />
     <Parameter Name="fechaSalida" Type="datetime" Mode="In" />

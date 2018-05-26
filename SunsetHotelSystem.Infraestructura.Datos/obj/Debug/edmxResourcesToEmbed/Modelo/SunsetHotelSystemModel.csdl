@@ -7,8 +7,8 @@
     <Property Name="TN_Identificador_TSH_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TC_Nombre_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TC_Apellidos_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TC_correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TC_Tarjeta_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_Correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Cliente" ToRole="TSH_Reserva" />
   </EntityType>
   <EntityType Name="TSH_Habitacion">
@@ -33,9 +33,9 @@
     <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
     <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="Guid" Nullable="false" />
-    <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
   </EntityType>
   <EntityType Name="TSH_Pag_Home">
@@ -183,7 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SunsetHotel_DBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SunsetHotelSystem_DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
     <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" />
     <EntitySet Name="TSH_Pag_Facilidades" EntityType="Self.TSH_Pag_Facilidades" />
@@ -225,6 +225,7 @@
       <Parameter Name="apellidos" Mode="In" Type="String" />
       <Parameter Name="correo" Mode="In" Type="String" />
       <Parameter Name="tarjeta" Mode="In" Type="String" />
+      <Parameter Name="idReserva" Mode="In" Type="Guid" />
       <Parameter Name="numero" Mode="In" Type="Int32" />
       <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
       <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />

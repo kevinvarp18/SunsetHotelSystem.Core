@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioHabitacion : IRepositorioHabitacion {
 
-        private readonly SunsetHotel_DBEntities SS_Contexto;
+        private readonly SunsetHotelSystem_DBEntities SS_Contexto;
 
-        public RepositorioHabitacion(SunsetHotel_DBEntities contexto) {
+        public RepositorioHabitacion(SunsetHotelSystem_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 

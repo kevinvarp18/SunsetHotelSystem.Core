@@ -10,9 +10,9 @@ using System.Data.Entity.Core.Objects;
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioTipoHabitacion : IRepositorioTipoHabitacion {
 
-        private readonly SunsetHotel_DBEntities SS_Contexto;
+        private readonly SunsetHotelSystem_DBEntities SS_Contexto;
 
-        public RepositorioTipoHabitacion(SunsetHotel_DBEntities contexto) {
+        public RepositorioTipoHabitacion(SunsetHotelSystem_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 

@@ -11,19 +11,18 @@ using System.Threading.Tasks;
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioReserva : IRepositorioReserva {
 
-        private readonly SunsetHotel_DBEntities SS_Contexto;
+        private readonly SunsetHotelSystem_DBEntities SS_Contexto;
 
-        public RepositorioReserva(SunsetHotel_DBEntities contexto) {
+        public RepositorioReserva(SunsetHotelSystem_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public TSH_Reserva insertar(TSH_Reserva reserva) {
+        public void insertar(TSH_Reserva reserva) {
             try {
-                SS_Contexto.sp_realizarReserva(reserva.TSH_Cliente.TC_Nombre_TSH_Cliente, reserva.TSH_Cliente.TC_Apellidos_TSH_Cliente, reserva.TSH_Cliente.TC_correo_TSH_Cliente, reserva.TSH_Cliente.TC_Tarjeta_TSH_Cliente, reserva.TN_Num_Habitacion_TSH_Reserva, reserva.TD_Fecha_Ingreso_TSH_Reserva, reserva.TD_Fecha_Salida_TSH_Reserva);
+                SS_Contexto.sp_realizarReserva(reserva.TSH_Cliente.TC_Nombre_TSH_Cliente, reserva.TSH_Cliente.TC_Apellidos_TSH_Cliente, reserva.TSH_Cliente.TC_Correo_TSH_Cliente, reserva.TSH_Cliente.TC_Tarjeta_TSH_Cliente, reserva.TN_Numero_Reserva_TSH_Reserva, reserva.TN_Num_Habitacion_TSH_Reserva, reserva.TD_Fecha_Ingreso_TSH_Reserva, reserva.TD_Fecha_Salida_TSH_Reserva);
             } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }
-            return reserva;
         }//Fin del método insertarReserva.
 
         public List<TSH_Reserva> obtener() {

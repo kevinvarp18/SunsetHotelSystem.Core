@@ -83,7 +83,6 @@
     <EntityDeploy Include="Modelo\SunsetHotelSystemModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SunsetHotelSystemModel.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>SunsetHotelSystem.Dominio.Entidades.Entidades</CustomToolNamespace>
     </EntityDeploy>
     <None Include="Modelo\SunsetHotelSystemModel.edmx.diagram">
       <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>

@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioPagina : IRepositorioPagina {
-        private readonly SunsetHotel_DBEntities SS_Contexto;
+        private readonly SunsetHotelSystem_DBEntities SS_Contexto;
 
-        public RepositorioPagina(SunsetHotel_DBEntities contexto) {
+        public RepositorioPagina(SunsetHotelSystem_DBEntities contexto) {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
@@ -26,7 +26,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             return paginaTemp;
         }//Fin del método obtenerPorID.
 
-        public TSH_Pagina actualizar(TSH_Pagina pagina) {
+        public void actualizar(TSH_Pagina pagina) {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try {
@@ -39,7 +39,6 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
             actualizarSubPagina(pagina);
-            return pagina;
         }//Fin del método actualizar.
 
         public void actualizarSubPagina(TSH_Pagina pagina) {

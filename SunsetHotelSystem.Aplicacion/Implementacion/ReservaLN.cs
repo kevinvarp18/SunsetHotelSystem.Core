@@ -22,7 +22,7 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             Respuesta<TSH_Reserva> respuesta = new Respuesta<TSH_Reserva>();
 
             try {
-                respuesta.valorRetorno = DominioReserva.insertar(reserva);
+                DominioReserva.insertar(reserva);
                 respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
