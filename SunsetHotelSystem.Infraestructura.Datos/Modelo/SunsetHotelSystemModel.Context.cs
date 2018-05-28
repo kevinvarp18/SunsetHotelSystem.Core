@@ -27,6 +27,7 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<TSH_Caracteristica_habitacion> TSH_Caracteristica_habitacion { get; set; }
         public virtual DbSet<TSH_Cliente> TSH_Cliente { get; set; }
         public virtual DbSet<TSH_Habitacion> TSH_Habitacion { get; set; }
         public virtual DbSet<TSH_Pag_Facilidades> TSH_Pag_Facilidades { get; set; }

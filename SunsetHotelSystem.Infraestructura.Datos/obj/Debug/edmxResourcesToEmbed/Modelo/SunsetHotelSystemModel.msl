@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SunsetHotelSystemModelStoreContainer" CdmEntityContainer="SunsetHotelSystem_DBEntities">
+    <EntitySetMapping Name="TSH_Caracteristica_habitacion">
+      <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Caracteristica_habitacion">
+        <MappingFragment StoreEntitySet="TSH_Caracteristica_habitacion">
+          <ScalarProperty Name="TC_Descripcion_TSH_Caracteristica_habitacion" ColumnName="TC_Descripcion_TSH_Caracteristica_habitacion" />
+          <ScalarProperty Name="TN_Id_Tipo_Habitacion_TSH_Caracteristica_Habitacion" ColumnName="TN_Id_Tipo_Habitacion_TSH_Caracteristica_Habitacion" />
+          <ScalarProperty Name="TN_Identificador_TSH_Caracteristica_habitacion" ColumnName="TN_Identificador_TSH_Caracteristica_habitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TSH_Cliente">
       <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Cliente">
         <MappingFragment StoreEntitySet="TSH_Cliente">
-          <ScalarProperty Name="TN_Identificador_TSH_Cliente" ColumnName="TN_Identificador_TSH_Cliente" />
           <ScalarProperty Name="TC_Nombre_TSH_Cliente" ColumnName="TC_Nombre_TSH_Cliente" />
           <ScalarProperty Name="TC_Apellidos_TSH_Cliente" ColumnName="TC_Apellidos_TSH_Cliente" />
           <ScalarProperty Name="TC_Tarjeta_TSH_Cliente" ColumnName="TC_Tarjeta_TSH_Cliente" />
           <ScalarProperty Name="TC_Correo_TSH_Cliente" ColumnName="TC_Correo_TSH_Cliente" />
+          <ScalarProperty Name="TC_Cedula_TSH_Cliente" ColumnName="TC_Cedula_TSH_Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -20,9 +29,6 @@
           <ScalarProperty Name="TN_Id_TipoH_TSH_Habitacion" ColumnName="TN_Id_TipoH_TSH_Habitacion" />
           <ScalarProperty Name="TN_Estado_TSH_habitacion" ColumnName="TN_Estado_TSH_habitacion" />
           <ScalarProperty Name="TN_Borrado_TSH_Habitacion" ColumnName="TN_Borrado_TSH_Habitacion" />
-          <ScalarProperty Name="TC_Descripcion_TSH_Habitacion" ColumnName="TC_Descripcion_TSH_Habitacion" />
-          <ScalarProperty Name="TI_Imagen_TSH_Habitacion" ColumnName="TI_Imagen_TSH_Habitacion" />
-          <ScalarProperty Name="TN_Id_Imagen_TSH_Habitacion" ColumnName="TN_Id_Imagen_TSH_Habitacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -35,6 +41,7 @@
           <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
           <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
+          <ScalarProperty Name="TN_Borrado_TSH_Pag_Facilidades" ColumnName="TN_Borrado_TSH_Pag_Facilidades" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -71,10 +78,10 @@
           <ScalarProperty Name="TN_Identificador_TSH_Reserva" ColumnName="TN_Identificador_TSH_Reserva" />
           <ScalarProperty Name="TN_Numero_Reserva_TSH_Reserva" ColumnName="TN_Numero_Reserva_TSH_Reserva" />
           <ScalarProperty Name="TN_Num_Habitacion_TSH_Reserva" ColumnName="TN_Num_Habitacion_TSH_Reserva" />
-          <ScalarProperty Name="TN_Id_Cliente_TSH_Reserva" ColumnName="TN_Id_Cliente_TSH_Reserva" />
+          <ScalarProperty Name="TC_Id_Cliente_TSH_Reserva" ColumnName="TC_Id_Cliente_TSH_Reserva" />
           <ScalarProperty Name="TD_Fecha_Ingreso_TSH_Reserva" ColumnName="TD_Fecha_Ingreso_TSH_Reserva" />
           <ScalarProperty Name="TD_Fecha_Salida_TSH_Reserva" ColumnName="TD_Fecha_Salida_TSH_Reserva" />
-          <ScalarProperty Name="TN_Borrado_TSH_Habitacion" ColumnName="TN_Borrado_TSH_Habitacion" />
+          <ScalarProperty Name="TN_Borrado_TSH_Reserva" ColumnName="TN_Borrado_TSH_Reserva" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -84,6 +91,7 @@
           <ScalarProperty Name="TN_Identificador_TSH_SobreN_Galeria" ColumnName="TN_Identificador_TSH_SobreN_Galeria" />
           <ScalarProperty Name="TN_Id_Imagen_TSH_SobreN_Galeria" ColumnName="TN_Id_Imagen_TSH_SobreN_Galeria" />
           <ScalarProperty Name="TI_Imagen_TSH_SobreN_Galeria" ColumnName="TI_Imagen_TSH_SobreN_Galeria" />
+          <ScalarProperty Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" ColumnName="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,8 +100,11 @@
         <MappingFragment StoreEntitySet="TSH_Tipo_Habitacion">
           <ScalarProperty Name="TN_Identificador_TSH_Tipo_Habitacion" ColumnName="TN_Identificador_TSH_Tipo_Habitacion" />
           <ScalarProperty Name="TN_Tarifa_TSH_Tipo_Habitacion" ColumnName="TN_Tarifa_TSH_Tipo_Habitacion" />
-          <ScalarProperty Name="TC_Descripcion_TSH_Tipo_Habitacion" ColumnName="TC_Descripcion_TSH_Tipo_Habitacion" />
+          <ScalarProperty Name="TC_Titulo_TSH_Tipo_Habitacion" ColumnName="TC_Titulo_TSH_Tipo_Habitacion" />
           <ScalarProperty Name="TN_Cantidad_Personas_TSH_Tipo_Habitacion" ColumnName="TN_Cantidad_Personas_TSH_Tipo_Habitacion" />
+          <ScalarProperty Name="TC_Descripcion_TSH_Tipo_Habitacion" ColumnName="TC_Descripcion_TSH_Tipo_Habitacion" />
+          <ScalarProperty Name="TN_Id_Imagen_TSH_Tipo_Habitacion" ColumnName="TN_Id_Imagen_TSH_Tipo_Habitacion" />
+          <ScalarProperty Name="TI_Imagen_TSH_Tipo_Habitacion" ColumnName="TI_Imagen_TSH_Tipo_Habitacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
