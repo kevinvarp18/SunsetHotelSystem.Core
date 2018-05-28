@@ -7,13 +7,13 @@
       <Schema Namespace="SunsetHotelSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TSH_Cliente">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+            <PropertyRef Name="TC_Cedula_TSH_Cliente" />
           </Key>
-          <Property Name="TN_Identificador_TSH_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TC_Nombre_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TC_Apellidos_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TC_Tarjeta_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TC_Correo_TSH_Cliente" Type="varchar" MaxLength="25" />
+          <Property Name="TC_Cedula_TSH_Cliente" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="TSH_Habitacion">
           <Key>
@@ -24,7 +24,6 @@
           <Property Name="TN_Id_TipoH_TSH_Habitacion" Type="int" Nullable="false" />
           <Property Name="TN_Estado_TSH_habitacion" Type="int" Nullable="false" />
           <Property Name="TN_Borrado_TSH_Habitacion" Type="int" Nullable="false" />
-          <Property Name="TC_Descripcion_TSH_Habitacion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TI_Imagen_TSH_Habitacion" Type="varbinary(max)" />
           <Property Name="TN_Id_Imagen_TSH_Habitacion" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
@@ -38,6 +37,7 @@
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
           <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
           <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="image" />
+          <Property Name="TN_Borrado_TSH_Pag_Facilidades" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
           <Key>
@@ -70,18 +70,19 @@
           <Property Name="TN_Identificador_TSH_Reserva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TN_Numero_Reserva_TSH_Reserva" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TN_Num_Habitacion_TSH_Reserva" Type="int" Nullable="false" />
-          <Property Name="TN_Id_Cliente_TSH_Reserva" Type="int" Nullable="false" />
+          <Property Name="TC_Id_Cliente_TSH_Reserva" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TD_Fecha_Ingreso_TSH_Reserva" Type="datetime" Nullable="false" />
           <Property Name="TD_Fecha_Salida_TSH_Reserva" Type="datetime" Nullable="false" />
-          <Property Name="TN_Borrado_TSH_Habitacion" Type="int" Nullable="false" />
+          <Property Name="TN_Borrado_TSH_Reserva" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TSH_SobreN_Galeria">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_SobreN_Galeria" />
+            <PropertyRef Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" />
           </Key>
           <Property Name="TN_Identificador_TSH_SobreN_Galeria" Type="int" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_SobreN_Galeria" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TI_Imagen_TSH_SobreN_Galeria" Type="varbinary(max)" />
+          <Property Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="TSH_Tipo_Habitacion">
           <Key>
@@ -99,10 +100,10 @@
           <End Role="TSH_Reserva" Type="Self.TSH_Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Cliente">
-              <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+              <PropertyRef Name="TC_Cedula_TSH_Cliente" />
             </Principal>
             <Dependent Role="TSH_Reserva">
-              <PropertyRef Name="TN_Id_Cliente_TSH_Reserva" />
+              <PropertyRef Name="TC_Id_Cliente_TSH_Reserva" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -152,7 +153,7 @@
           <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TSH_SobreN_Galeria" Type="Self.TSH_SobreN_Galeria" Multiplicity="0..1" />
+          <End Role="TSH_SobreN_Galeria" Type="Self.TSH_SobreN_Galeria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Pagina">
               <PropertyRef Name="TN_Identificador_TSH_Pagina" />
@@ -231,13 +232,13 @@
       <Schema Namespace="SunsetHotelSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TSH_Cliente">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+            <PropertyRef Name="TC_Cedula_TSH_Cliente" />
           </Key>
-          <Property Name="TN_Identificador_TSH_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TC_Nombre_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_Apellidos_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_Tarjeta_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_Correo_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TC_Cedula_TSH_Cliente" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Cliente" ToRole="TSH_Reserva" />
         </EntityType>
         <EntityType Name="TSH_Habitacion">
@@ -249,7 +250,6 @@
           <Property Name="TN_Id_TipoH_TSH_Habitacion" Type="Int32" Nullable="false" />
           <Property Name="TN_Estado_TSH_habitacion" Type="Int32" Nullable="false" />
           <Property Name="TN_Borrado_TSH_Habitacion" Type="Int32" Nullable="false" />
-          <Property Name="TC_Descripcion_TSH_Habitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TI_Imagen_TSH_Habitacion" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TN_Id_Imagen_TSH_Habitacion" Type="Guid" Nullable="false" />
           <NavigationProperty Name="TSH_Reserva" Relationship="Self.FKTSH_Habitacion_REL_TSH_Reserva" FromRole="TSH_Habitacion" ToRole="TSH_Reserva" />
@@ -265,6 +265,7 @@
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TN_Borrado_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
@@ -302,20 +303,21 @@
           <Property Name="TN_Identificador_TSH_Reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TN_Numero_Reserva_TSH_Reserva" Type="Guid" Nullable="false" />
           <Property Name="TN_Num_Habitacion_TSH_Reserva" Type="Int32" Nullable="false" />
-          <Property Name="TN_Id_Cliente_TSH_Reserva" Type="Int32" Nullable="false" />
+          <Property Name="TC_Id_Cliente_TSH_Reserva" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TD_Fecha_Ingreso_TSH_Reserva" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TD_Fecha_Salida_TSH_Reserva" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TN_Borrado_TSH_Habitacion" Type="Int32" Nullable="false" />
+          <Property Name="TN_Borrado_TSH_Reserva" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TSH_Cliente" Relationship="Self.FKTSH_Cliente_REL_TSH_Reserva" FromRole="TSH_Reserva" ToRole="TSH_Cliente" />
           <NavigationProperty Name="TSH_Habitacion" Relationship="Self.FKTSH_Habitacion_REL_TSH_Reserva" FromRole="TSH_Reserva" ToRole="TSH_Habitacion" />
         </EntityType>
         <EntityType Name="TSH_SobreN_Galeria">
           <Key>
-            <PropertyRef Name="TN_Identificador_TSH_SobreN_Galeria" />
+            <PropertyRef Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" />
           </Key>
           <Property Name="TN_Identificador_TSH_SobreN_Galeria" Type="Int32" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_SobreN_Galeria" Type="Guid" Nullable="false" />
           <Property Name="TI_Imagen_TSH_SobreN_Galeria" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_SobreN_Galeria" FromRole="TSH_SobreN_Galeria" ToRole="TSH_Pagina" />
         </EntityType>
         <EntityType Name="TSH_Tipo_Habitacion">
@@ -335,10 +337,10 @@
           <End Role="TSH_Reserva" Type="Self.TSH_Reserva" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Cliente">
-              <PropertyRef Name="TN_Identificador_TSH_Cliente" />
+              <PropertyRef Name="TC_Cedula_TSH_Cliente" />
             </Principal>
             <Dependent Role="TSH_Reserva">
-              <PropertyRef Name="TN_Id_Cliente_TSH_Reserva" />
+              <PropertyRef Name="TC_Id_Cliente_TSH_Reserva" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -402,7 +404,7 @@
           <End Role="TSH_Pagina" Type="Self.TSH_Pagina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TSH_SobreN_Galeria" Type="Self.TSH_SobreN_Galeria" Multiplicity="0..1" />
+          <End Role="TSH_SobreN_Galeria" Type="Self.TSH_SobreN_Galeria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TSH_Pagina">
               <PropertyRef Name="TN_Identificador_TSH_Pagina" />
@@ -482,11 +484,11 @@
           <EntitySetMapping Name="TSH_Cliente">
             <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Cliente">
               <MappingFragment StoreEntitySet="TSH_Cliente">
-                <ScalarProperty Name="TN_Identificador_TSH_Cliente" ColumnName="TN_Identificador_TSH_Cliente" />
                 <ScalarProperty Name="TC_Nombre_TSH_Cliente" ColumnName="TC_Nombre_TSH_Cliente" />
                 <ScalarProperty Name="TC_Apellidos_TSH_Cliente" ColumnName="TC_Apellidos_TSH_Cliente" />
                 <ScalarProperty Name="TC_Tarjeta_TSH_Cliente" ColumnName="TC_Tarjeta_TSH_Cliente" />
                 <ScalarProperty Name="TC_Correo_TSH_Cliente" ColumnName="TC_Correo_TSH_Cliente" />
+                <ScalarProperty Name="TC_Cedula_TSH_Cliente" ColumnName="TC_Cedula_TSH_Cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -498,7 +500,6 @@
                 <ScalarProperty Name="TN_Id_TipoH_TSH_Habitacion" ColumnName="TN_Id_TipoH_TSH_Habitacion" />
                 <ScalarProperty Name="TN_Estado_TSH_habitacion" ColumnName="TN_Estado_TSH_habitacion" />
                 <ScalarProperty Name="TN_Borrado_TSH_Habitacion" ColumnName="TN_Borrado_TSH_Habitacion" />
-                <ScalarProperty Name="TC_Descripcion_TSH_Habitacion" ColumnName="TC_Descripcion_TSH_Habitacion" />
                 <ScalarProperty Name="TI_Imagen_TSH_Habitacion" ColumnName="TI_Imagen_TSH_Habitacion" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_Habitacion" ColumnName="TN_Id_Imagen_TSH_Habitacion" />
               </MappingFragment>
@@ -513,6 +514,7 @@
                 <ScalarProperty Name="TC_Descripcion_TSH_Pag_Facilidades" ColumnName="TC_Descripcion_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TC_TituloFacilidad_TSH_Pag_Facilidades" ColumnName="TC_TituloFacilidad_TSH_Pag_Facilidades" />
                 <ScalarProperty Name="TI_Imagen_TSH_Pag_Facilidades" ColumnName="TI_Imagen_TSH_Pag_Facilidades" />
+                <ScalarProperty Name="TN_Borrado_TSH_Pag_Facilidades" ColumnName="TN_Borrado_TSH_Pag_Facilidades" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -549,10 +551,10 @@
                 <ScalarProperty Name="TN_Identificador_TSH_Reserva" ColumnName="TN_Identificador_TSH_Reserva" />
                 <ScalarProperty Name="TN_Numero_Reserva_TSH_Reserva" ColumnName="TN_Numero_Reserva_TSH_Reserva" />
                 <ScalarProperty Name="TN_Num_Habitacion_TSH_Reserva" ColumnName="TN_Num_Habitacion_TSH_Reserva" />
-                <ScalarProperty Name="TN_Id_Cliente_TSH_Reserva" ColumnName="TN_Id_Cliente_TSH_Reserva" />
+                <ScalarProperty Name="TC_Id_Cliente_TSH_Reserva" ColumnName="TC_Id_Cliente_TSH_Reserva" />
                 <ScalarProperty Name="TD_Fecha_Ingreso_TSH_Reserva" ColumnName="TD_Fecha_Ingreso_TSH_Reserva" />
                 <ScalarProperty Name="TD_Fecha_Salida_TSH_Reserva" ColumnName="TD_Fecha_Salida_TSH_Reserva" />
-                <ScalarProperty Name="TN_Borrado_TSH_Habitacion" ColumnName="TN_Borrado_TSH_Habitacion" />
+                <ScalarProperty Name="TN_Borrado_TSH_Reserva" ColumnName="TN_Borrado_TSH_Reserva" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -562,6 +564,7 @@
                 <ScalarProperty Name="TN_Identificador_TSH_SobreN_Galeria" ColumnName="TN_Identificador_TSH_SobreN_Galeria" />
                 <ScalarProperty Name="TN_Id_Imagen_TSH_SobreN_Galeria" ColumnName="TN_Id_Imagen_TSH_SobreN_Galeria" />
                 <ScalarProperty Name="TI_Imagen_TSH_SobreN_Galeria" ColumnName="TI_Imagen_TSH_SobreN_Galeria" />
+                <ScalarProperty Name="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" ColumnName="TN_IdentificadorNumImagen_TSH_SobreN_Galeria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
