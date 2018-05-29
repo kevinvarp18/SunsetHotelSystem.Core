@@ -23,7 +23,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }
-        }//Fin del método insertarReserva.
+        }//Fin del método insertar.
 
         public List<TSH_Reserva> obtener() {
             List<TSH_Reserva> listaReservas = new List<TSH_Reserva>();
@@ -33,7 +33,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }
             return listaReservas;
-        }//Fin del método obtenerTiposHabitacion.
+        }//Fin del método obtener.
 
     }//Fin de la clase RepositorioReserva.
 }//Fin del namespace.

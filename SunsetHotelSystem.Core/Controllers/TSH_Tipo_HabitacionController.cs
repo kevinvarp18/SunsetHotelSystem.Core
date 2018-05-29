@@ -24,18 +24,18 @@ namespace SunsetHotelSystem.Core.Controllers {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método HabitacionDisponible.
+        }//Fin del método obtenerTiposHabitacion.
 
         [Route("{tipoHabitacion}")]
         [HttpGet]
         [ResponseType(typeof(Respuesta<SP_ConsultarDisponibilidad_Result>))]
-        public IHttpActionResult obtenerTipoHabitacion(int tipoHabitacion) {
+        public IHttpActionResult obtenerTipoHabitacionID(int tipoHabitacion) {
             Respuesta<SP_ConsultarDisponibilidad_Result> respuesta = new Respuesta<SP_ConsultarDisponibilidad_Result>();
             var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
             return Json(habitacionLN.lfObtenerHabitacionesDisponibles(tipoHabitacion), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método HabitacionDisponible.
+        }//Fin del método obtenerTipoHabitacionID.
     }
 }

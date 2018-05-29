@@ -24,7 +24,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }
             return listaFacilidades;
-        }//Fin del método obtenerTiposHabitacion.
+        }//Fin del método obtener.
 
         public void actualizar(TSH_Pag_Facilidades facilidad) {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();

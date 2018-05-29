@@ -9,5 +9,6 @@ namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioHabitacion {
         List<SP_ConsultarDisponibilidad_Result> obtenerHabitacionesDisponibles(int tipoHabitacion);
         TSH_Habitacion obtenerPorID(int idHabitacion);
+        List<TSH_Habitacion> obtener();
     }//Fin de la interfaz IRepositorioHabitacion.
 }//Fin del namespace.

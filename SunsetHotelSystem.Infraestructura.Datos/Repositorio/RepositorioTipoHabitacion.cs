@@ -24,7 +24,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }
             return listaTiposHabitacion;
-        }//Fin del método obtenerTiposHabitacion.
+        }//Fin del método obtener.
 
     }//Fin de la clase RepositorioTipoHabitacion.
 }//Fin del namespace.

@@ -18,13 +18,25 @@ namespace SunsetHotelSystem.Core.Controllers {
         [Route("{idHabitacion}")]
         [HttpGet]
         [ResponseType(typeof(Respuesta<TSH_Habitacion>))]
-        public IHttpActionResult Reserva(int idHabitacion) {
+        public IHttpActionResult obtenerHabitacionID(int idHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
             var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
             return Json(habitacionLN.lfObtenerPorID(idHabitacion), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método HabitacionDisponible.
+        }//Fin del método obtenerHabitacionID.
+
+        [Route("")]
+        [HttpGet]
+        [ResponseType(typeof(Respuesta<List<TSH_Habitacion>>))]
+        public IHttpActionResult obtenerHabitaciones() {
+            Respuesta<List<TSH_Habitacion>> respuesta = new Respuesta<List<TSH_Habitacion>>();
+            var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
+            return Json(habitacionLN.lfObtener(), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método obtenerHabitaciones.
     }//Fin de la clase.
 }//Fin del namespace.

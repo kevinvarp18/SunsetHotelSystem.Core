@@ -25,7 +25,17 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }
             return listaHabitaciones;
-        }//Fin del método obtenerTiposHabitacion.
+        }//Fin del método obtenerHabitacionesDisponibles.
+
+        public List<TSH_Habitacion> obtener()  {
+            List<TSH_Habitacion> listaHabitaciones = new List<TSH_Habitacion>();
+            try {
+                listaHabitaciones = (from list in SS_Contexto.TSH_Habitacion select list).ToList<TSH_Habitacion>();
+            } catch (Exception ex) {
+                throw new Exception(ex.ToString());
+            }
+            return listaHabitaciones;
+        }//Fin del método obtener.
 
         public TSH_Habitacion obtenerPorID(int idHabitacion) {
             TSH_Habitacion habitacionTemp = new TSH_Habitacion();
@@ -35,6 +45,6 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
                 throw new Exception(ex.ToString());
             }
             return habitacionTemp;
-        }//Fin del método lfObtenerHabitacion
+        }//Fin del método obtenerPorID.
     }//Fin de la clase RepositorioHabitacion.
 }//Fin del namespace.

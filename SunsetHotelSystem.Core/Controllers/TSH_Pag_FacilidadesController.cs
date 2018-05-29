@@ -24,7 +24,7 @@ namespace SunsetHotelSystem.Core.Controllers {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });
-        }//Fin del método obtenerPagina.
+        }//Fin del método obtenerFacilidades.
 
         [Route("")]
         [HttpPut]
