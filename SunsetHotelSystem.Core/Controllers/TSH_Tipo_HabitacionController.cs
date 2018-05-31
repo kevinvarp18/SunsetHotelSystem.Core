@@ -37,5 +37,16 @@ namespace SunsetHotelSystem.Core.Controllers {
                 Formatting = Formatting.Indented
             });
         }//Fin del método obtenerTipoHabitacionID.
+
+        [Route("")]
+        [HttpPut]
+        [ResponseType(typeof(Respuesta<TSH_Tipo_Habitacion>))]
+        public IHttpActionResult actualizarTipoHabitacion([FromBody]TSH_Tipo_Habitacion tipoHabitacion) {
+            TipoHabitacionLN tipoHabitacionLN = FabricaIoC.Container.Resolver<TipoHabitacionLN>();
+            return Json(tipoHabitacionLN.lfActualizar(tipoHabitacion), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método actualizarTipoHabitacion.
     }
 }

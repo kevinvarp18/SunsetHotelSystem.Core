@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SunsetHotelSystem.Dominio.IRepositorio;
 using SunsetHotelSystem.Dominio.Entidades.Entidades;
 using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
 
 namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
     public class RepositorioTipoHabitacion : IRepositorioTipoHabitacion {
@@ -25,6 +26,20 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             }
             return listaTiposHabitacion;
         }//Fin del método obtener.
+
+        public void actualizar(TSH_Tipo_Habitacion tipoHabitacion) {
+            DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
+
+            try {
+                var entity = SS_Contexto.TSH_Tipo_Habitacion.Find(tipoHabitacion.TN_Identificador_TSH_Tipo_Habitacion);
+                SS_Contexto.Entry(entity).CurrentValues.SetValues(tipoHabitacion);
+                SS_Contexto.SaveChanges();
+                dbTransaccion.Commit();
+            } catch (Exception ex) {
+                dbTransaccion.Rollback();
+                throw new Exception(ex.ToString());
+            }//Fin del try-catch.
+        }//Fin del método actualizar.
 
     }//Fin de la clase RepositorioTipoHabitacion.
 }//Fin del namespace.

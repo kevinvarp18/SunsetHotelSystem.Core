@@ -32,5 +32,21 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             }//Fin del try-catch.
             return respuesta;
         }//Fin del método lfObtener.
+
+        public Respuesta<TSH_Tipo_Habitacion> lfActualizar(TSH_Tipo_Habitacion tipoHabitacion) {
+            Respuesta<TSH_Tipo_Habitacion> respuesta = new Respuesta<TSH_Tipo_Habitacion>();
+
+            try {
+                DominioTipoHabitacion.actualizar(tipoHabitacion);
+                respuesta.resultado = 1;
+            } catch (Exception ex) {
+                respuesta.bnlIndicadorTransaccion = false;
+                respuesta.valorRetorno = null;
+                respuesta.strOrigen = ex.ToString();
+                respuesta.resultado = 0;
+            }//Fin del try-catch.
+            return respuesta;
+        }//Fin del método lfActualizar.
+
     }//Fin de la clase TipoHabitacionLN.
 }//Fin del namespace.
