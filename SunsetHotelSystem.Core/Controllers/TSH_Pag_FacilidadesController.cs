@@ -27,6 +27,17 @@ namespace SunsetHotelSystem.Core.Controllers {
         }//Fin del método obtenerFacilidades.
 
         [Route("")]
+        [HttpPost]
+        [ResponseType(typeof(Respuesta<TSH_Pag_Facilidades>))]
+        public IHttpActionResult insertarFacilidad([FromBody]TSH_Pag_Facilidades facilidad) {
+            FacilidadesLN facilidadLN = FabricaIoC.Container.Resolver<FacilidadesLN>();
+            return Json(facilidadLN.lfInsertar(facilidad), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método agregarReserva.
+
+        [Route("")]
         [HttpPut]
         [ResponseType(typeof(Respuesta<TSH_Pagina>))]
         public IHttpActionResult actualizarFacilidades([FromBody]TSH_Pag_Facilidades facilidad) {

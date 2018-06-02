@@ -45,7 +45,7 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try {
-                if (pagina.TN_Identificador_TSH_Pagina == 5) {
+                if (pagina.TN_Identificador_TSH_Pagina == 5 && pagina.TSH_Pag_Home.TI_Imagen_TSH_Pag_Home != null) {
                     var entity = SS_Contexto.TSH_Pag_Home.Find(pagina.TN_Identificador_TSH_Pagina);
                     SS_Contexto.Entry(entity).CurrentValues.SetValues(pagina.TSH_Pag_Home);
                 }//Fin del if.

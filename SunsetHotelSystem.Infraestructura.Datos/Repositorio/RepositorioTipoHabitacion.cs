@@ -32,7 +32,11 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
 
             try {
                 var entity = SS_Contexto.TSH_Tipo_Habitacion.Find(tipoHabitacion.TN_Identificador_TSH_Tipo_Habitacion);
-                SS_Contexto.Entry(entity).CurrentValues.SetValues(tipoHabitacion);
+                if (tipoHabitacion.TI_Imagen_TSH_Tipo_Habitacion != null)
+                    SS_Contexto.Entry(entity).CurrentValues.SetValues(tipoHabitacion);
+                else
+                    SS_Contexto.Entry(entity).CurrentValues.SetValues(new { TN_Tarifa_TSH_Tipo_Habitacion = tipoHabitacion.TN_Tarifa_TSH_Tipo_Habitacion, TC_Descripcion_TSH_Tipo_Habitacion = tipoHabitacion.TC_Descripcion_TSH_Tipo_Habitacion });
+
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             } catch (Exception ex) {
