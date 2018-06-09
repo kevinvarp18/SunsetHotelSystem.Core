@@ -4,7 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SunsetHotelSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SunsetHotelSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TSH_Administrador">
+          <Key>
+            <PropertyRef Name="TC_Correo_TSH_Administrador" />
+          </Key>
+          <Property Name="TC_Correo_TSH_Administrador" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TC_contrasenia_TSH_Administrador" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="TSH_Caracteristica_habitacion">
           <Key>
             <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
@@ -38,12 +45,12 @@
             <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
           </Key>
           <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
-          <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
           <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
           <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="image" />
           <Property Name="TN_Borrado_TSH_Pag_Facilidades" Type="int" Nullable="false" />
+          <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="TSH_Pag_Home">
           <Key>
@@ -212,6 +219,7 @@
           <Parameter Name="fechaSalida" Type="datetime" Mode="In" />
         </Function>
         <EntityContainer Name="SunsetHotelSystemModelStoreContainer">
+          <EntitySet Name="TSH_Administrador" EntityType="Self.TSH_Administrador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" Schema="dbo" store:Type="Tables" />
@@ -251,8 +259,7 @@
             <End Role="TSH_Habitacion" EntitySet="TSH_Habitacion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SunsetHotelSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -503,7 +510,7 @@
             <End Role="TSH_SobreN_Galeria" EntitySet="TSH_SobreN_Galeria" />
           </AssociationSet>
           <FunctionImport Name="SP_ConsultarDisponibilidad" ReturnType="Collection(SunsetHotelSystemModel.SP_ConsultarDisponibilidad_Result)">
-            <Parameter Name="idTipoHabitacion" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoHabitacion" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_realizarReserva" ReturnType="Collection(SunsetHotelSystemModel.sp_realizarReserva_Result)">
             <Parameter Name="nombre" Mode="In" Type="String" />
@@ -515,6 +522,7 @@
             <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
             <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="TSH_Administrador" EntityType="SunsetHotelSystemModel.TSH_Administrador" />
         </EntityContainer>
         <ComplexType Name="SP_ConsultarDisponibilidad_Result">
           <Property Type="Int32" Name="TN_Identificador_TSH_Habitacion" Nullable="false" />
@@ -529,6 +537,13 @@
           <Property Type="Int32" Name="ErrorLine" Nullable="true" />
           <Property Type="String" Name="ErrorMessage" Nullable="true" MaxLength="4000" />
         </ComplexType>
+        <EntityType Name="TSH_Administrador">
+          <Key>
+            <PropertyRef Name="TC_Correo_TSH_Administrador" />
+          </Key>
+          <Property Name="TC_Correo_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TC_contrasenia_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -663,6 +678,14 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="TSH_Administrador">
+            <EntityTypeMapping TypeName="SunsetHotelSystemModel.TSH_Administrador">
+              <MappingFragment StoreEntitySet="TSH_Administrador">
+                <ScalarProperty Name="TC_contrasenia_TSH_Administrador" ColumnName="TC_contrasenia_TSH_Administrador" />
+                <ScalarProperty Name="TC_Correo_TSH_Administrador" ColumnName="TC_Correo_TSH_Administrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

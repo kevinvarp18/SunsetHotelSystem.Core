@@ -22,6 +22,7 @@
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_Pag_Facilidades" ManuallyRouted="false" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_Pag_Home" ManuallyRouted="false" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_SobreN_Galeria" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Administrador" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

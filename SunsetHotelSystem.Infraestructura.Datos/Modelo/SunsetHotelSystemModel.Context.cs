@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SunsetHotelSystem.Dominio.Entidades.Entidades
+namespace SunsetHotelSystem.Dominio.Entidades
 {
     using System;
     using System.Data.Entity;
@@ -37,6 +37,7 @@ namespace SunsetHotelSystem.Dominio.Entidades.Entidades
         public virtual DbSet<TSH_Reserva> TSH_Reserva { get; set; }
         public virtual DbSet<TSH_SobreN_Galeria> TSH_SobreN_Galeria { get; set; }
         public virtual DbSet<TSH_Tipo_Habitacion> TSH_Tipo_Habitacion { get; set; }
+        public virtual DbSet<TSH_Administrador> TSH_Administrador { get; set; }
     
         public virtual ObjectResult<SP_ConsultarDisponibilidad_Result> SP_ConsultarDisponibilidad(Nullable<int> idTipoHabitacion)
         {

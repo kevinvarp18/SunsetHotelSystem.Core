@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SunsetHotelSystem.Dominio.Entidades.Entidades;
+using SunsetHotelSystem.Dominio.Entidades;
 
 namespace SunsetHotelSystem.Dominio.IRepositorio {
     public interface IRepositorioFacilidades {

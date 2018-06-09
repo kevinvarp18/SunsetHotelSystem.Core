@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SunsetHotelSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TSH_Administrador">
+    <Key>
+      <PropertyRef Name="TC_Correo_TSH_Administrador" />
+    </Key>
+    <Property Name="TC_Correo_TSH_Administrador" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TC_contrasenia_TSH_Administrador" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="TSH_Caracteristica_habitacion">
     <Key>
       <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
@@ -33,12 +40,12 @@
       <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
     </Key>
     <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="int" Nullable="false" />
-    <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="uniqueidentifier" Nullable="false" />
     <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="varchar" MaxLength="1500" Nullable="false" />
     <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="varchar" MaxLength="30" />
     <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="image" />
     <Property Name="TN_Borrado_TSH_Pag_Facilidades" Type="int" Nullable="false" />
+    <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="TSH_Pag_Home">
     <Key>
@@ -207,6 +214,7 @@
     <Parameter Name="fechaSalida" Type="datetime" Mode="In" />
   </Function>
   <EntityContainer Name="SunsetHotelSystemModelStoreContainer">
+    <EntitySet Name="TSH_Administrador" EntityType="Self.TSH_Administrador" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" Schema="dbo" store:Type="Tables" />

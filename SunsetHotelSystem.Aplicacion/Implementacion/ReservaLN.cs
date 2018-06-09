@@ -1,6 +1,6 @@
 ﻿using SunsetHotelSystem.Aplicacion.Interfaces;
 using SunsetHotelSystem.Dominio.IRepositorio;
-using SunsetHotelSystem.Dominio.Entidades.Entidades;
+using SunsetHotelSystem.Dominio.Entidades;
 using SunsetHotelSystem.Dominio.UTL;
 using System;
 using System.Collections.Generic;

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SunsetHotelSystem.Dominio.IRepositorio;
-using SunsetHotelSystem.Dominio.Entidades.Entidades;
+using SunsetHotelSystem.Dominio.Entidades;
 using System.Data.Entity.Core.Objects;
 using System;
 

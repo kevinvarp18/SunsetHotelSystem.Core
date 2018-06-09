@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SunsetHotelSystem.Aplicacion.Implementacion;
-using SunsetHotelSystem.Dominio.Entidades.Entidades;
+using SunsetHotelSystem.Dominio.Entidades;
 using SunsetHotelSystem.Dominio.UTL;
 using SunsetHotelSystem.Infraestructura.IoC;
 using System;

@@ -99,7 +99,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SunsetHotelSystemModel.edmx</DependentUpon>
       <LastGenOutput>SunsetHotelSystemModel.Context.cs</LastGenOutput>
-      <CustomToolNamespace>SunsetHotelSystem.Dominio.Entidades.Entidades</CustomToolNamespace>
+      <CustomToolNamespace>SunsetHotelSystem.Dominio.Entidades</CustomToolNamespace>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

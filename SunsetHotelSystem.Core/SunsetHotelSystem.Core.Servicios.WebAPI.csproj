@@ -196,14 +196,11 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Views\Reserva\" />
-    <Folder Include="Views\TSH_CaracteristicaHabitacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

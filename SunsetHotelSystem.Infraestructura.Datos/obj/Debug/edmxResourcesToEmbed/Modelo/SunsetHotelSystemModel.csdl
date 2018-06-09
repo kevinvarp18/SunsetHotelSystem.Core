@@ -259,6 +259,7 @@
       <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
       <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <EntitySet Name="TSH_Administrador" EntityType="SunsetHotelSystemModel.TSH_Administrador" />
   </EntityContainer>
   <ComplexType Name="SP_ConsultarDisponibilidad_Result">
     <Property Type="Int32" Name="TN_Identificador_TSH_Habitacion" Nullable="false" />
@@ -273,4 +274,11 @@
     <Property Type="Int32" Name="ErrorLine" Nullable="true" />
     <Property Type="String" Name="ErrorMessage" Nullable="true" MaxLength="4000" />
   </ComplexType>
+  <EntityType Name="TSH_Administrador">
+    <Key>
+      <PropertyRef Name="TC_Correo_TSH_Administrador" />
+    </Key>
+    <Property Name="TC_Correo_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TC_contrasenia_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

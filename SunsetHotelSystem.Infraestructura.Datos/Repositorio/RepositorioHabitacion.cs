@@ -1,6 +1,5 @@
 ﻿using SunsetHotelSystem.Dominio.Entidades;
 using SunsetHotelSystem.Dominio.IRepositorio;
-using SunsetHotelSystem.Dominio.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

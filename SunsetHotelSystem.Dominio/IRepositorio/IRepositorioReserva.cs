@@ -1,4 +1,4 @@
-﻿using SunsetHotelSystem.Dominio.Entidades.Entidades;
+﻿using SunsetHotelSystem.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
