@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TSH_AdministradorController.cs" />
     <Compile Include="Controllers\TSH_CaracteristicaHabitacionController.cs" />
     <Compile Include="Controllers\TSH_PaginaController.cs" />
     <Compile Include="Controllers\TSH_Pag_FacilidadesController.cs" />
@@ -201,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Views\TSH_Administrador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

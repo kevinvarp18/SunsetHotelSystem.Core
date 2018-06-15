@@ -45,5 +45,19 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             }
             return habitacionTemp;
         }//Fin del método obtenerPorID.
+
+        public void actualizar(TSH_Habitacion habitacion) {
+            DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
+
+            try {
+                var entity = SS_Contexto.TSH_Habitacion.Find(habitacion.TN_Numero_Habitacion_TSH_Habitacion);
+                SS_Contexto.Entry(entity).CurrentValues.SetValues(new { TN_Borrado_TSH_Habitacion = habitacion.TN_Borrado_TSH_Habitacion });
+                SS_Contexto.SaveChanges();
+                dbTransaccion.Commit();
+            } catch (Exception ex) {
+                dbTransaccion.Rollback();
+                throw new Exception(ex.ToString());
+            }//Fin del try-catch.
+        }//Fin del método actualizar.
     }//Fin de la clase RepositorioHabitacion.
 }//Fin del namespace.

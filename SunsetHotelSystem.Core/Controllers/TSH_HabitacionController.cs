@@ -38,5 +38,16 @@ namespace SunsetHotelSystem.Core.Controllers {
                 Formatting = Formatting.Indented
             });
         }//Fin del método obtenerHabitaciones.
-    }//Fin de la clase.
+
+        [Route("")]
+        [HttpPut]
+        [ResponseType(typeof(Respuesta<TSH_Habitacion>))]
+        public IHttpActionResult actualizarEstadoHabitacion([FromBody]TSH_Habitacion habitacion) {
+            HabitacionLN habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
+            return Json(habitacionLN.lfActualizar(habitacion), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método actualizarEstadoHabitacion
+    }//Fin de la clase TSH_HabitacionController.
 }//Fin del namespace.

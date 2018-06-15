@@ -11,5 +11,6 @@ namespace SunsetHotelSystem.Aplicacion.Interfaces {
         Respuesta<List<SP_ConsultarDisponibilidad_Result>> lfObtenerHabitacionesDisponibles(int tipoHabitacion);
         Respuesta<TSH_Habitacion> lfObtenerPorID(int idHabitacion);
         Respuesta<List<TSH_Habitacion>> lfObtener();
+        Respuesta<TSH_Habitacion> lfActualizar(TSH_Habitacion habitacion);
     }//Fin de la interfaz IHabitacionLN.
 }//Fin del namespace.
