@@ -4,14 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="956fca584f574b9d8e7d56418f3e4ccc" Name="Diagram1" ZoomLevel="47">
+      <Diagram DiagramId="1e80b3349165470c9cbc2ce672e193d8" Name="Diagram1">
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Administrador" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Caracteristica_habitacion" Width="1.5" PointX="8" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Cliente" Width="1.5" PointX="8" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Habitacion" Width="1.5" PointX="8" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Facilidades" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pag_Home" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Pagina" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Publicidad" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Publicidad" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Reserva" Width="1.5" PointX="10.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_SobreN_Galeria" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Tipo_Habitacion" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
@@ -22,7 +24,6 @@
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_Pag_Facilidades" ManuallyRouted="false" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_Pag_Home" ManuallyRouted="false" />
         <AssociationConnector Association="SunsetHotelSystemModel.FKTSH_Pagina_REL_TSH_SobreN_Galeria" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SunsetHotelSystemModel.TSH_Administrador" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

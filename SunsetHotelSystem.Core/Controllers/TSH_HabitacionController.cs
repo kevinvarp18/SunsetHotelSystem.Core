@@ -15,13 +15,13 @@ namespace SunsetHotelSystem.Core.Controllers {
     [RoutePrefix("api/TSH_Habitacion")]
 
     public class TSH_HabitacionController : ApiController {
-        [Route("{idHabitacion}")]
+        [Route("{numeroHabitacion}")]
         [HttpGet]
         [ResponseType(typeof(Respuesta<TSH_Habitacion>))]
-        public IHttpActionResult obtenerHabitacionID(int idHabitacion) {
+        public IHttpActionResult obtenerHabitacionID(int numeroHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
             var habitacionLN = FabricaIoC.Container.Resolver<HabitacionLN>();
-            return Json(habitacionLN.lfObtenerPorID(idHabitacion), new JsonSerializerSettings() {
+            return Json(habitacionLN.lfObtenerPorID(numeroHabitacion), new JsonSerializerSettings() {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
             });

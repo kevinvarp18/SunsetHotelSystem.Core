@@ -36,10 +36,10 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             return listaHabitaciones;
         }//Fin del método obtener.
 
-        public TSH_Habitacion obtenerPorID(int idHabitacion) {
+        public TSH_Habitacion obtenerPorID(int numeroHabitacion) {
             TSH_Habitacion habitacionTemp = new TSH_Habitacion();
             try {
-                habitacionTemp = (from listaHabitaciones in SS_Contexto.TSH_Habitacion where listaHabitaciones.TN_Identificador_TSH_Habitacion == idHabitacion select listaHabitaciones).Single<TSH_Habitacion>();
+                habitacionTemp = (from listaHabitaciones in SS_Contexto.TSH_Habitacion where listaHabitaciones.TN_Numero_Habitacion_TSH_Habitacion == numeroHabitacion select listaHabitaciones).Single<TSH_Habitacion>();
             } catch (Exception ex) {
                 throw new Exception(ex.ToString());
             }

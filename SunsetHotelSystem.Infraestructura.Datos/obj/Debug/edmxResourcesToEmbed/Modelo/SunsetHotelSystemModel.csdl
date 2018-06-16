@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SunsetHotelSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TSH_Administrador">
+    <Key>
+      <PropertyRef Name="TC_Correo_TSH_Administrador" />
+    </Key>
+    <Property Name="TC_Correo_TSH_Administrador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_contrasenia_TSH_Administrador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
   <EntityType Name="TSH_Caracteristica_habitacion">
     <Key>
       <PropertyRef Name="TN_Identificador_TSH_Caracteristica_habitacion" />
@@ -37,12 +54,12 @@
       <PropertyRef Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" />
     </Key>
     <Property Name="TN_Identificador_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
-    <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TN_Id_Imagen_TSH_Pag_Facilidades" Type="Guid" Nullable="false" />
     <Property Name="TC_Descripcion_TSH_Pag_Facilidades" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TC_TituloFacilidad_TSH_Pag_Facilidades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="TI_Imagen_TSH_Pag_Facilidades" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="TN_Borrado_TSH_Pag_Facilidades" Type="Int32" Nullable="false" />
+    <Property Name="TN_IdentificadorNumFac_TSH_Pag_Facilidades" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="TSH_Pagina" Relationship="Self.FKTSH_Pagina_REL_TSH_Pag_Facilidades" FromRole="TSH_Pag_Facilidades" ToRole="TSH_Pagina" />
   </EntityType>
   <EntityType Name="TSH_Pag_Home">
@@ -208,6 +225,8 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SunsetHotelSystem_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TSH_Administrador" EntityType="Self.TSH_Administrador" />
     <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" />
     <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
     <EntitySet Name="TSH_Habitacion" EntityType="Self.TSH_Habitacion" />
@@ -250,6 +269,7 @@
       <Parameter Name="idTipoHabitacion" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_realizarReserva" ReturnType="Collection(SunsetHotelSystemModel.sp_realizarReserva_Result)">
+      <Parameter Name="cedula" Mode="In" Type="String" />
       <Parameter Name="nombre" Mode="In" Type="String" />
       <Parameter Name="apellidos" Mode="In" Type="String" />
       <Parameter Name="correo" Mode="In" Type="String" />
@@ -259,10 +279,9 @@
       <Parameter Name="fechaLlegada" Mode="In" Type="DateTime" />
       <Parameter Name="fechaSalida" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <EntitySet Name="TSH_Administrador" EntityType="SunsetHotelSystemModel.TSH_Administrador" />
   </EntityContainer>
   <ComplexType Name="SP_ConsultarDisponibilidad_Result">
-    <Property Type="Int32" Name="TN_Identificador_TSH_Habitacion" Nullable="false" />
+    <Property Type="Int32" Name="TN_Numero_Habitacion_TSH_Habitacion" Nullable="false" />
     <Property Type="String" Name="TC_Descripcion_TSH_Tipo_Habitacion" Nullable="false" MaxLength="1000" />
     <Property Type="Double" Name="TN_Tarifa_TSH_Tipo_Habitacion" Nullable="false" />
   </ComplexType>
@@ -274,11 +293,4 @@
     <Property Type="Int32" Name="ErrorLine" Nullable="true" />
     <Property Type="String" Name="ErrorMessage" Nullable="true" MaxLength="4000" />
   </ComplexType>
-  <EntityType Name="TSH_Administrador">
-    <Key>
-      <PropertyRef Name="TC_Correo_TSH_Administrador" />
-    </Key>
-    <Property Name="TC_Correo_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="TC_contrasenia_TSH_Administrador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

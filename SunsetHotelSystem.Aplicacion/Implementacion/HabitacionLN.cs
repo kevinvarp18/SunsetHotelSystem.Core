@@ -33,11 +33,11 @@ namespace SunsetHotelSystem.Aplicacion.Implementacion {
             return respuesta;
         }//Fin del método lfObtenerHabitacionesDisponibles.
 
-        public Respuesta<TSH_Habitacion> lfObtenerPorID(int idHabitacion) {
+        public Respuesta<TSH_Habitacion> lfObtenerPorID(int numeroHabitacion) {
             Respuesta<TSH_Habitacion> respuesta = new Respuesta<TSH_Habitacion>();
 
             try {
-                respuesta.valorRetorno = DominioHabitacion.obtenerPorID(idHabitacion);
+                respuesta.valorRetorno = DominioHabitacion.obtenerPorID(numeroHabitacion);
                 respuesta.resultado = 1;
             } catch (Exception ex) {
                 respuesta.bnlIndicadorTransaccion = false;
