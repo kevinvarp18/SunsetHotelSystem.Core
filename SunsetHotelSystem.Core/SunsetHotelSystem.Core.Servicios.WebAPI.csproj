@@ -173,8 +173,10 @@
     <Compile Include="Controllers\TSH_CaracteristicaHabitacionController.cs" />
     <Compile Include="Controllers\TSH_PaginaController.cs" />
     <Compile Include="Controllers\TSH_Pag_FacilidadesController.cs" />
+    <Compile Include="Controllers\TSH_PublicidadController.cs" />
     <Compile Include="Controllers\TSH_ReservaController.cs" />
     <Compile Include="Controllers\TSH_HabitacionController.cs" />
+    <Compile Include="Controllers\TSH_SobreN_GaleriaController.cs" />
     <Compile Include="Controllers\TSH_Tipo_HabitacionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,7 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Views\TSH_Administrador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

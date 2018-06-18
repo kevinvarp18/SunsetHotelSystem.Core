@@ -34,5 +34,14 @@ namespace SunsetHotelSystem.Infraestructura.Datos.Repositorio {
             return listaReservas;
         }//Fin del método obtener.
 
+        public TSH_Reserva obtenerPorID(int idReserva) {
+            TSH_Reserva reservaTemp = new TSH_Reserva();
+            try {
+                reservaTemp = (from listaReservas in SS_Contexto.TSH_Reserva where listaReservas.TN_Identificador_TSH_Reserva == idReserva select listaReservas).Single<TSH_Reserva>();
+            } catch (Exception ex) {
+                throw new Exception(ex.ToString());
+            }
+            return reservaTemp;
+        }//Fin del método obtenerPorID.
     }//Fin de la clase RepositorioReserva.
 }//Fin del namespace.

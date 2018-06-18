@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SunsetHotelSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TSH_Administrador">
     <Key>
       <PropertyRef Name="TC_Correo_TSH_Administrador" />
@@ -88,7 +78,8 @@
     <Property Name="TN_Identificador_TSH_Publicidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TN_Id_Imagen_TSH_Publicidad" Type="Guid" Nullable="false" />
     <Property Name="TI_Imagen_TSH_Publicidad" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="TC_Direccion_Pagina_TSH_Publicidad" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TC_Direccion_Pagina_TSH_Publicidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TN_Borrado_TSH_Publicidad" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="TSH_Reserva">
     <Key>
@@ -225,7 +216,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SunsetHotelSystem_DBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TSH_Administrador" EntityType="Self.TSH_Administrador" />
     <EntitySet Name="TSH_Caracteristica_habitacion" EntityType="Self.TSH_Caracteristica_habitacion" />
     <EntitySet Name="TSH_Cliente" EntityType="Self.TSH_Cliente" />
@@ -282,6 +272,7 @@
   </EntityContainer>
   <ComplexType Name="SP_ConsultarDisponibilidad_Result">
     <Property Type="Int32" Name="TN_Numero_Habitacion_TSH_Habitacion" Nullable="false" />
+    <Property Type="String" Name="TC_Titulo_TSH_Tipo_Habitacion" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="TC_Descripcion_TSH_Tipo_Habitacion" Nullable="false" MaxLength="1000" />
     <Property Type="Double" Name="TN_Tarifa_TSH_Tipo_Habitacion" Nullable="false" />
   </ComplexType>

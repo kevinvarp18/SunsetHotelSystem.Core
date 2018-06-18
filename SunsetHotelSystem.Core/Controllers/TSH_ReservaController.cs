@@ -39,5 +39,17 @@ namespace SunsetHotelSystem.Core.Controllers {
                 Formatting = Formatting.Indented
             });
         }//Fin del método obtenerReservas.
+
+        [Route("{idReserva}")]
+        [HttpGet]
+        [ResponseType(typeof(Respuesta<TSH_Reserva>))]
+        public IHttpActionResult obtenerReservaID(int idReserva) {
+            Respuesta<TSH_Reserva> respuesta = new Respuesta<TSH_Reserva>();
+            var reservaLN = FabricaIoC.Container.Resolver<ReservaLN>();
+            return Json(reservaLN.lfObtenerPorID(idReserva), new JsonSerializerSettings() {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                Formatting = Formatting.Indented
+            });
+        }//Fin del método obtenerReservaID.
     }//Fin de la clase ReservaController.
 }//Fin del namespace.

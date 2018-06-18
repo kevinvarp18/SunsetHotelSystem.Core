@@ -10,6 +10,6 @@ namespace SunsetHotelSystem.Aplicacion.Interfaces {
     public interface IReservaLN {
         Respuesta<TSH_Reserva> lfInsertar(TSH_Reserva reserva);
         Respuesta<List<TSH_Reserva>> lfObtener();
-
+        Respuesta<TSH_Reserva> lfObtenerPorID(int idReserva);
     }//Fin de la interfaz IReserva.
 }//Fin del namespace.

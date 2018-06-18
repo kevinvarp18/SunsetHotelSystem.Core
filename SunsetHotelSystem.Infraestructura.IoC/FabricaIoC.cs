@@ -21,6 +21,8 @@ namespace SunsetHotelSystem.Infraestructura.IoC {
             _unityContainer.RegisterType<IRepositorioFacilidades, RepositorioFacilidades>();
             _unityContainer.RegisterType<IRepositorioCaracteristicaHabitacion, RepositorioCaracteristicaHabitacion>();
             _unityContainer.RegisterType<IRepositorioAdministrador, RepositorioAdministrador>();
+            _unityContainer.RegisterType<IRepositorioPublicidad, RepositorioPublicidad>();
+            _unityContainer.RegisterType<IRepositorioGaleria, RepositorioGaleria>();
         }//Fin del constructor.
         public static FabricaIoC Container {
             get { return _container; }

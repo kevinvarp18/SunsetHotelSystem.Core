@@ -65,8 +65,10 @@
     <Compile Include="Repositorio\RepositorioAdministrador.cs" />
     <Compile Include="Repositorio\RepositorioCaracteristicaHabitacion.cs" />
     <Compile Include="Repositorio\RepositorioFacilidades.cs" />
+    <Compile Include="Repositorio\RepositorioGaleria.cs" />
     <Compile Include="Repositorio\RepositorioHabitacion.cs" />
     <Compile Include="Repositorio\RepositorioPagina.cs" />
+    <Compile Include="Repositorio\RepositorioPublicidad.cs" />
     <Compile Include="Repositorio\RepositorioReserva.cs" />
     <Compile Include="Repositorio\RepositorioTipoHabitacion.cs" />
   </ItemGroup>
